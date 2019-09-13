@@ -27,6 +27,8 @@ Si eres familiar a **LaTeX**, entonces sera muy fácil usar Overleaf. Si no es a
 
 El orden que yo propuse para la redacción de mi tesis es la siguiente: Un archivo principal donde se tiene la redacción del documento en si y en donde se invoca el resto de archivos (**main.tex**), una vez la tesis sea aceptada, se puede tener el resumen de la tesis y la ficha de firmas de los asesores las cuales se encuentran en **abstract.tex** y **head.tex** respectivamente. Las referencias (**ref.bib**) y el formato del mismo (**apalikeADR.bst**) se encuentran dentro de la carpeta *References*. Las imágenes o figuras en formato .png (puede ser otro formato) están almacenadas en la carpeta *Images*. Debido a que las figuras y cuadros pueden ocasionar mucho espacio en **main.tex**, estás se generaron previamente en *FigsANDTables* en formato .tex para luego ser invocado en **main.tex**
 
+Advertencia
+---------------
 Debo mencionar que a la fecha mi tesis aun no ha sido *aprobada*, así que se espera algunas cambios próximamente. Si tienes dudas o preguntas, házmelo saber a **adrhuerta@gmail.com**.
 
 Agradecimientos
