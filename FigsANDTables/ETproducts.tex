@@ -1,26 +1,25 @@
 \begin{sidewaystable}
-\caption{\label{tab:ETproducts} Características de los diferentes productos de $AE$ utilizados.}
+\caption{\label{tab:ETproducts} Características de los diferentes productos globales de $AE$ basados en percepción remota utilizados.}
 \centering
 \begin{tabular}{llllllll}
 \hline 
 Producto     & Cobertura & Cobertura & Resolución & Resolución & Enfoque de                & Datos de   & Referencia      \\
              & temporal  & espacial  & temporal   & espacial   & estimación                & entrada    &                 \\   \hline
 GLEAM        & 1980-2016 & Global    & Diario     & 0.25 x     & Ecuación P-T              & AMSR-E     & \citet{Martens2017}     \\
-             &           &           &            & 0.25       & Factor de estrés de suelo & LPRM       &                 \\
-             &           &           &            &            &                           & MSWEP     &                 \\
+v.3.3a      &           &           &            & 0.25       & Factor de estrés de suelo & LPRM       &                 \\
              &           &           &            &            &                           & TRMM       &                 \\
 MODIS16      & 2000-2014 & Global    & Mensual    & 0.0083 x   & Ecuación P-M              & MODIS      & \citet{mu2013modis}         \\
-             &           &           &            & 0.0083     & Modelo de conductancia    &            &                 \\
+v.105         &           &           &            & 0.0083     & Modelo de conductancia    &            &                 \\
              &           &           &            &            & de superficie             &            &                 \\
 SSEBop       & 2003-2017 & Global    & Mensual    & 0.0096 x   & Ecuación P-M              & MODIS      & \citet{senay2011enhancing}      \\
-             &           &           &            & 0.0096     & Fracciones ET de LST      &            &                 \\
+v4.0         &           &           &            & 0.0096     & Fracciones ET de LST      &            &                 \\
 TerraClimate & 1958-2015 & Global    & Mensual    & 0.04 x     & Balance hídrico del suelo & WorldClim  & \citet{abatzoglou2018terraclimate} \\
              &           &           &            & 0.04       & unidimensional            & CRU        &                 \\
              &           &           &            &            &                           & JRA55      &                 \\
 Zhang        & 1981-2013 & Global    & Mensual    & 0.083 x    & Ecuación P-M              & AVHRR      & \citet{zhang2015vegetation}      \\
              &           &           &            & 0.083      & Balance hídrico del suelo & NCEP/NCAR  &                 \\
              &           &           &            &            &                           & NASA/GEWEX &                 \\
-MEAN         & 2000-2015 & Global    & Anual      & 0.01 x     & -                         & -          & Tesis actual    \\
+MEAN         & 2003-2013 & Global    & Anual      & 0.01 x     & -                         & -          & Tesis actual    \\
              &           &           &            & 0.01       & -                         & -          &                  \\ \hline 
 \end{tabular}
 \end{sidewaystable}

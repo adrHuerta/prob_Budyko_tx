@@ -1,0 +1,62 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{l|l|l}
+\caption{Resumen de los principales métodos de estimación de evapotranspiración actual basado en percepción remota. \label{tab:TableZhang02}} \\
+\caption*{\vspace{.25cm} Fuente: \citet{zhang2016review}.} \\
+\hline
+\textbf{Método} & \textbf{Ventajas}        & \textbf{Asunciones y/o}             \\
+\endfirsthead
+%
+\multicolumn{3}{c}%
+{{Tabla \thetable\ Continuación de la pagina anterior \vspace{.5cm}}} \\
+\endhead
+%
+\hline
+\endfoot
+%
+\endlastfoot
+%
+\textbf{}       & \textbf{}                & \textbf{limitaciones}               \\ \hline
+SEB             &                          & Solo para cielo despejado;          \\
+Una fuente      & Simple, y poco           & requiere excesiva                   \\
+                & requerimiento de         & parametrización de                  \\ \cline{1-1}
+SEB             & información              & resistencia y calibración local;    \\
+Una fuente con  & meteorológica            & probable a errores de $LST$ y $T$;      \\
+variabilidad    &                          & requiere valores            \\
+espacial        &                          & instantáneos a diarios              \\ \hline
+SEB             &                          &                                     \\
+Dos fuentes     & Poco requerimiento       & Solo para cielo despejado;          \\ \cline{1-1}
+SEB             & de información           & muy sensible a los errores de $LST$;   \\
+Dos fuentes     &  meteorológica           & requiere valores          \\
+(tiempo         &                          & instantáneos a diarios              \\
+diferenciado)   &                          &                                     \\ \hline
+LST-VI          & Poco requerimiento      & Solo  para cielo despejado;         \\
+                & de información           & Relación LST-VI muy simplificado;   \\
+                & bajo impacto en          &   requiere valores                  \\
+                & errores de $LST$         & instantáneos a diario     \\ \hline
+PM              & Cobertura continua       & Alto requerimiento de datos;          \\
+                & basada en procesos       & Estimación simplificada o           \\
+                & físicos.                  & semi-empírica de la                 \\
+                & Paso de tiempo flexible, & conductancia del dosel              \\
+                & sin requisitos o con     &                                     \\
+                & requisitos bajos de $LST$  &                                     \\ \hline
+PT              & Simple; requerimiento    & Muchas simplificaciones fisicas;     \\
+                & moderado de              & requiere flujo de calor del suelo   \\
+                & información              & como entrada o supone que           \\
+                &                          & es despreciable; aplicado             \\ 
+                &                          & a escala mensual                    \\ \hline
+MEP             & Poca información         & Requiere $LST$ continuo para            \\
+                & meteorológica            & producir un registro $AE$ continuo.     \\ \hline
+Balance         & Simple y fácil           & No puede derivar directamente $AE$;    \\
+Hídrico         & de aplicar               & pobre resolución espacio-temporal   \\
+                &                          & sensible a los errores de $P$         \\ \hline
+Agua -          & Considerando relación    & Posible requerimiento de mucha      \\
+Carbono         & entre el carbono y       & información, afectado por           \\
+                & flujos de agua           & vacíos y/o errores.                  \\ \hline
+Modelos         & simple y fácil           & Requiere calibración y capacidad     \\
+Empíricos       & de aplicar               & baja fuera del área de calibración; \\
+                &                          & proceso físico simplificado;      \\
+                &                          & sujeto a condiciones climáticas     \\
+                &                          & si se requiere $LST$                   \\ \hline
+\end{longtable}
