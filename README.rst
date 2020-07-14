@@ -29,7 +29,7 @@ El orden que yo propuse para la redacción de mi tesis es la siguiente: Un archi
 
 Advertencia
 ---------------
-Debo mencionar que a la fecha mi tesis <del>aun no ha sido *aprobada*, así que se espera algunas cambios próximamente<del> ya se encuentra aprobada por el jurado. Si tienes dudas o preguntas, házmelo saber a **adrhuerta@gmail.com**.
+Debo mencionar que a la fecha mi tesis ~~aun no ha sido *aprobada*, así que se espera algunas cambios próximamente~~ ya se encuentra aprobada por el jurado. Si tienes dudas o preguntas, házmelo saber a **adrhuerta@gmail.com**.
 
 Agradecimientos
 ---------------
