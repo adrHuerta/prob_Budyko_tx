@@ -29,7 +29,7 @@ El orden que yo propuse para la redacción de mi tesis es la siguiente: Un archi
 
 Advertencia
 ---------------
-Debo mencionar que a la fecha mi tesis aun no ha sido *aprobada*, así que se espera algunas cambios próximamente. Si tienes dudas o preguntas, házmelo saber a **adrhuerta@gmail.com**.
+Debo mencionar que a la fecha mi tesis <del>aun no ha sido *aprobada*, así que se espera algunas cambios próximamente<del> ya se encuentra aprobada por el jurado. Si tienes dudas o preguntas, házmelo saber a **adrhuerta@gmail.com**.
 
 Agradecimientos
 ---------------
@@ -39,4 +39,4 @@ Referencias
 ------------
 1. Singh, R., and Kumar, R. (2015). Vulnerability of water availability in India due to climate change: A bottom‐up probabilistic Budyko analysis. Geophysical Research Letters, 42(22), 9799-9807.
 
-2. Weerasinghe, I., van Griensven, A., Bastiaanssen, W., Mul, M., and Jia, L. (2019). Can we trust remote sensing ET products over Africa?, Hydrol. Earth Syst. Sci. Discuss., https://doi.org/10.5194/hess-2019-233, in review.
+2. Weerasinghe, I., van Griensven, A., Bastiaanssen, W., Mul, M., and Jia, L. (2020). Can we trust remote sensing ET products over Africa?, Hydrol. Earth Syst. Sci. Discuss., https://doi.org/10.5194/hess-24-1565-2020, 24(3), 1565-1586.
