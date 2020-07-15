@@ -1,9 +1,9 @@
 prob_Budyko_tx (probabilistic Budyko)
 ==================================
 
-La finalidad de esta tesis fue evaluar la vulnerabilidad de la disponibilidad de los recursos hídricos debido al cambio climático a través del enfoque bottom-up. La tesis sigue las ideas de dos principales trabajos: validación de la evapotranspiración actual (`Weerasinghe et al. 2019 <https://www.hydrol-earth-syst-sci-discuss.net/hess-2019-233/>`__) y aplicación del Budyko probabilístico (`Singh and Kumar 2015 <https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL066363>`__).
+La finalidad de esta tesis fue evaluar la vulnerabilidad de la disponibilidad de los recursos hídricos debido al cambio climático a través del enfoque bottom-up. La tesis sigue las ideas de dos principales trabajos: validación de la evapotranspiración actual (`Weerasinghe et al. 2020 <https://www.hydrol-earth-syst-sci.net/24/1565/2020/hess-24-1565-2020.html>`__) y aplicación del Budyko probabilístico (`Singh and Kumar 2015 <https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL066363>`__).
 
-La vista en formato PDF se encuentra en <https://www.overleaf.com/read/rvxdjrbcqkwf>.
+La vista en formato PDF se encuentra en <https://www.overleaf.com/read/rvxdjrbcqkwf>. y el código para la realización de esta investigación (`aqui <https://github.com/adrHuerta/prob_Budyko>`__).
 
 Formato de documento
 ---------------------
@@ -20,16 +20,16 @@ Uso
 Para hacer uso de este documento para tu propia tesis (proyecto, pregrado, maestría y doctorado) en la `UNALM <http://www.lamolina.edu.pe/>`__. Sigue lo siguiente:
 
 1. Crea tu cuenta en Overleaf usando <https://www.overleaf.com?r=e00506ba&rm=d&rs=b>
-2. Copia este proyecto <https://www.overleaf.com/read/rvxdjrbcqkwf> a tu propia cuenta mediante: Menu - Actions - Copy Project.
+2. Copia este proyecto <https://www.overleaf.com/read/rvxdjrbcqkwf> a tu propia cuenta mediante: **Menu** - **Actions** - **Copy Project**
 3. Dale un nombre al proyecto copiado y avanza tu tesis!
 
 Si eres familiar a **LaTeX**, entonces sera muy fácil usar Overleaf. Si no es así, te sugiero que leas la `wiki de Overleaf <https://es.overleaf.com/learn/latex/Tutorials>`__.
 
-El orden que yo propuse para la redacción de mi tesis es la siguiente: Un archivo principal donde se tiene la redacción del documento en si y en donde se invoca el resto de archivos (**main.tex**), una vez la tesis sea aceptada, se puede tener el resumen de la tesis y la ficha de firmas de los asesores las cuales se encuentran en **abstract.tex** y **head.tex** respectivamente. Las referencias (**ref.bib**) y el formato del mismo (**apalikeADR.bst**) se encuentran dentro de la carpeta *References*. Las imágenes o figuras en formato .png (puede ser otro formato) están almacenadas en la carpeta *Images*. Debido a que las figuras y cuadros pueden ocasionar mucho espacio en **main.tex**, estás se generaron previamente en *FigsANDTables* en formato .tex para luego ser invocado en **main.tex**
+El orden que yo propuse para la redacción de mi tesis es la siguiente: Un archivo principal donde se tiene la redacción del documento en si y en donde se invoca el resto de archivos (**main.tex**), una vez la tesis sea aceptada, se puede tener el resumen de la tesis y la ficha de firmas de los asesores las cuales se encuentran en **abstract.tex** y **head.tex** respectivamente. Las referencias (**ref.bib**) y el formato del mismo (**apalikeADR.bst**) se encuentran dentro de la carpeta *References*. Las imágenes o figuras en formato .png (puede ser otro formato) están almacenadas en la carpeta *Images*. Debido a que las figuras y tablas pueden ocasionar mucho espacio en **main.tex**, estás se generaron previamente en *FigsANDTables* en formato .tex para luego ser invocado en **main.tex**.
 
 Agradecimientos
 ---------------
-Esto no pudo ser posible sin **Overleaf**
+Esto no pudo ser posible sin **Overleaf**.
 
 Referencias
 ------------
