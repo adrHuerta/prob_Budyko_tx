@@ -3,7 +3,7 @@ prob_Budyko_tx (probabilistic Budyko)
 
 La finalidad de esta tesis fue evaluar la vulnerabilidad de la disponibilidad de los recursos hídricos debido al cambio climático a través del enfoque bottom-up. La tesis sigue las ideas de dos principales trabajos: validación de la evapotranspiración actual (`Weerasinghe et al. 2020 <https://www.hydrol-earth-syst-sci.net/24/1565/2020/hess-24-1565-2020.html>`__) y aplicación del Budyko probabilístico (`Singh and Kumar 2015 <https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL066363>`__).
 
-La vista en formato PDF se encuentra en <https://www.overleaf.com/read/rvxdjrbcqkwf>. y el código para la realización de esta investigación (`aqui <https://github.com/adrHuerta/prob_Budyko>`__).
+La vista en formato PDF se encuentra en <https://www.overleaf.com/read/rvxdjrbcqkwf> y el código para la realización de esta investigación `aqui <https://github.com/adrHuerta/prob_Budyko>`__.
 
 Formato de documento
 ---------------------
