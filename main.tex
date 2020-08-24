@@ -3,7 +3,6 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{rotating}
-\usepackage[labelsep=period]{caption}
 \usepackage{tocloft}
 \usepackage{sectsty}
 \usepackage[utf8]{inputenc}
@@ -12,15 +11,20 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{natbib}
+\usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{longtable}
 \usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{pdfpages}
-\usepackage{ragged2e}
-\usepackage[font=bf]{caption}
+\usepackage{floatpag}
+\usepackage{anyfontsize}
+\usepackage[font=bf,format=hang,labelsep=colon]{caption}
+\usepackage{floatpag}
+%\usepackage[newcommands]{ragged2e}
+%\usepackage[justification=centering]{caption}
 
-\usepackage[justification=centering]{caption}
+\setcitestyle{aysep={}}
 \geometry{
 	a4paper,
 	left=30mm,
@@ -55,12 +59,14 @@
 \renewcommand{\listtablename}{\large \hspace*{4cm} ÍNDICE DE TABLAS}
 \renewcommand{\tablename}{Tabla}
 
-\makeatletter
-\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
-\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
-\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
-\makeatother
+ \makeatletter
+ \renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+ \renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.6em}}
+ \renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+ \makeatother
 
+\titleformat*{\section}{\centering\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
 
 \begin{document}
 
@@ -97,6 +103,7 @@
 \textbf{T}: Temperatura \\
 \textbf{Tx}: Temperatura Máxima \\
 \textbf{Tn}: Temperatura Mínima \\
+\textbf{PNRH}: Plan Nacional de los Recursos Hídrico \\
 \textbf{SENAMHI}: Servicio Nacional de Meteorología de Hidrología del Perú \\
 \textbf{PISCO}: Datos Interpolados peruanos de las observaciones climatológicas e hidrológicas del SENAMHI \\
 \textbf{PISCOp}: PISCO precipitación \\
@@ -128,9 +135,11 @@
 \vspace*{0.5mm}
 \section{INTRODUCCIÓN}
 
-El Quinto Reporte del Panel Intergubernamental en Cambio Climático \citep[IPCC;][]{Field2014} indica que el 93\% de los impactos asociados al cambio climático será sobre los recursos hídricos (RH). A escala global ya existe evidencia de perturbaciones en los patrones de precipitación y descargas, impactando en la frecuencia y magnitud de inundaciones y sequías, contribuyendo en un mayor aumento de eventos extremos hidro-climáticos. La disponibilidad de recursos renovables de aguas superficiales y subterráneas probablemente disminuiría en la mayoría de regiones subtropicales áridas y semi-áridas, agravando la oferta de agua para la agricultura, ecosistemas, industria y población \citep{Field2014}. Este escenario es particularmente preocupante en los países en desarrollo del hemisferio sur \citep{Satterthwaite2012} debido a los altos niveles de exposición a los peligros asociados de los RH con el cambio climático, así también por factores no climáticos (sobre-explotación y falta de manejo) \citep{MacAlister2018}.
+\thispagestyle{empty}
 
-En Perú, las altas montañas toman un rol importante como fuente de agua para las ciudades y ecosistemas, esencialmente para las zonas bajas áridas adyacentes, porque almacenan y liberan agua de los glaciares y lagos \citep{Coudrain2005,Barnett2005,Viviroli2011}. Estudios concernientes al impacto del cambio climático en recursos hídricos en los Andes Peruanos tienden a estar enfocados en el retroceso glaciar \citep{VUILLE2018195,drenkhan2018current} y su impacto en los caudales, o en determinadas cuencas con información disponible en la que se pueda desarrollar modelos hidrológicos y su proyección futura. Por ejemplo, \citet{Pouyaud2005}, en la cuenca del río Llanganuco utilizó un incremento de temperatura de 0.1 $^{\circ}$C/década encontrando que los caudales en los próximos 20–50 años aumentan debido a la fusión del glaciar, conllevando a que el caudal sea dominado por la precipitación. \citet{Juen2007}, en la misma área de estudio, obtuvo similares resultados con el uso de un modelo hidro-glaciar más sofisticado proyectado con los modelos de circulación general (GCM) de cambio climático. La proyección evidenció una reducción de la estación seca debido a la disminución del tamaño glaciar, así también el periodo húmedo resultó ser más húmedo a causa de escorrentía directa por más lluvia. En el gradiente Andino-Amazónico, \citet{LavadoCasimiro2011} utilizó dos modelos hidrológicos, los datos climáticos de 3 GCM en 2 escenarios de emisión, y encontraron tendencias de descarga tanto decrecientes (4 cuencas) como crecientes (3 cuencas) en las cuencas de la Amazonia peruana. Para la cuenca del río Vilcanota, en los Andes Orientales del Sur del Perú, \citet{Andres2014} mediante la modelización hidrológica de datos satelitales y la aplicación de los GCM encontró que en los próximos cien años habrá más escorrentía total durante la temporada de lluvias (enero a marzo), y menos agua disponible en la estación seca (mayo a octubre). En la cuenca del río Santa, \citet{VanSoesbergen2016} descubre una tendencia hacia el aumento de la disponibilidad de agua debido a la incremento de precipitación, sin embargo, enfatizan la alta incertidumbre de sus resultados. \citet{Olsson2017}, en la cuenca del río Chancay-Huaral, localizado en el Pacífico central, menciona que a razón de los incrementos de precipitación, las descargas de los ríos también aumentaran, esto en mayor medida en el periodo húmedo que en el seco, donde puede haber decrecimiento de acuerdo a ciertos escenarios de emisión. Recientemente, \citet{Pilares2018} evaluó la disponibilidad de agua futura en la cuenca del río Cabanillas, en la vertiente del Lago Titicaca, hallando que solo el 80\% de la demanda es satisfecha, pero que el cambio climático ejerce un efecto sobre los aportes hídricos con un incremento del 15\% al 20\% de la disponibilidad hídrica. 
+El Quinto Reporte del Panel Intergubernamental en Cambio Climático (IPCC) \citep{Field2014} indica que el 93\% de los impactos asociados al cambio climático será sobre los recursos hídricos (RH). A escala global ya existe evidencia de perturbaciones en los patrones de precipitación y descargas, impactando en la frecuencia y magnitud de inundaciones y sequías, contribuyendo en un mayor aumento de eventos extremos hidro-climáticos. La disponibilidad de recursos renovables de aguas superficiales y subterráneas probablemente disminuiría en la mayoría de regiones subtropicales áridas y semi-áridas, agravando la oferta de agua para la agricultura, ecosistemas, industria y población \citep{Field2014}. Este escenario es particularmente preocupante en los países en desarrollo del hemisferio sur \citep{Satterthwaite2012} debido a los altos niveles de exposición a los peligros asociados de los RH con el cambio climático, así también por factores no climáticos (sobre-explotación y falta de manejo) \citep{MacAlister2018}.
+
+En Perú, las altas montañas toman un rol importante como fuente de agua para las ciudades y ecosistemas, esencialmente para las zonas bajas áridas adyacentes, porque almacenan y liberan agua de los glaciares y lagos \citep{Coudrain2005,barnett2005potential,Viviroli2011}. Estudios concernientes al impacto del cambio climático en recursos hídricos en los Andes Peruanos tienden a estar enfocados en el retroceso glaciar \citep{VUILLE2018195,drenkhan2018current} y su impacto en los caudales, o en determinadas cuencas con información disponible en la que se pueda desarrollar modelos hidrológicos y su proyección futura. Por ejemplo, \citet{Pouyaud2005}, en la cuenca del río Llanganuco utilizó un incremento de temperatura de 0.1 $^{\circ}$C/década encontrando que los caudales en los próximos 20–50 años aumentan debido a la fusión del glaciar, conllevando a que el caudal sea dominado por la precipitación. \citet{Juen2007}, en la misma área de estudio, obtuvo similares resultados con el uso de un modelo hidro-glaciar más sofisticado proyectado con los modelos de circulación general (GCM) de cambio climático. La proyección evidenció una reducción de la estación seca debido a la disminución del tamaño glaciar, así también el periodo húmedo resultó ser más húmedo a causa de escorrentía directa por más lluvia. En el gradiente Andino-Amazónico, \citet{LavadoCasimiro2011} utilizó dos modelos hidrológicos, los datos climáticos de 3 GCM en 2 escenarios de emisión, y encontraron tendencias de descarga tanto decrecientes (4 cuencas) como crecientes (3 cuencas) en las cuencas de la Amazonia peruana. Para la cuenca del río Vilcanota, en los Andes Orientales del Sur del Perú, \citet{Andres2014} mediante la modelización hidrológica de datos satelitales y la aplicación de los GCM encontró que en los próximos cien años habrá más escorrentía total durante la temporada de lluvias (enero a marzo), y menos agua disponible en la estación seca (mayo a octubre). En la cuenca del río Santa, \citet{VanSoesbergen2016} descubre una tendencia hacia el aumento de la disponibilidad de agua debido a la incremento de precipitación, sin embargo, enfatizan la alta incertidumbre de sus resultados. \citet{Olsson2017}, en la cuenca del río Chancay-Huaral, localizado en el Pacífico central, menciona que a razón de los incrementos de precipitación, las descargas de los ríos también aumentaran, esto en mayor medida en el periodo húmedo que en el seco, donde puede haber decrecimiento de acuerdo a ciertos escenarios de emisión. Recientemente, \citet{Pilares2018} evaluó la disponibilidad de agua futura en la cuenca del río Cabanillas, en la vertiente del Lago Titicaca, hallando que solo el 80\% de la demanda es satisfecha, pero que el cambio climático ejerce un efecto sobre los aportes hídricos con un incremento del 15\% al 20\% de la disponibilidad hídrica. 
 
 En general, los anteriores estudios demuestran que la disponibilidad del RH aumenta o no puede cambiar mucho con respecto al presente, así como también cambios significativos en la estacionalidad. No obstante, existen diferencias significativas entre las distintas proyecciones, que conducen a grandes diferencias en los RH entre escenarios \citep{Vuille2008} y son una incertidumbre clave asociada con la evaluación de los impactos del cambio climático en los RH, particularmente en el Perú \citep{VanSoesbergen2016}. Las incertidumbres son inherentes en los GCM debido a la representación simplificada de los mecanismos físicos de nubes, lluvia y topografía. Asimismo, se introduce más incertidumbre cuando se combinan con modelos hidrológicos, ya que las salidas de los GCM deben ser escaladas “downscaling" a una mayor resolución espacial. La resolución generalmente gruesa de los GCM suaviza los gradientes naturales en la precipitación y la temperatura, generando mayores problemas en regiones montañosas, ya que su hidrología se caracteriza por fuertes gradientes de elevación \citep{Buytaert2010}. Entonces para superar la problemática de la información escasa y la incertidumbre inherente de los GCM este estudio propone la combinación de la versión probabilística de la curva de Budyko \citep{Singh2015,Greve2015} con un enfoque abajo-arriba (``bottom-up"; en base a espacios climáticos hipotéticos) para determinar la disponibilidad del RH frente al cambio climático en el Perú. La ventaja del enfoque abajo-arriba es su independencia de las proyecciones futuras de cambio climático \citep{Singh2014,Poff2016}. Con el enfoque metodológico propuesto se determinará umbrales climáticos críticos de la disponibilidad del RH en todo el país y a diferencia de los anteriores estudios, este ofrece tres principales ventajas: i) una base de datos independiente para comparar estimaciones basadas en datos de caudales y modelos hidrológicos, ii) proporciona la cuantificación de la incertidumbre (no solo del clima, sino de fuentes secundarias) en las estimaciones sobre la disponibilidad de RH, iii) es simple y computacionalmente eficiente, conllevando un aumento potencial de la ayuda a los tomadores de decisiones al estimar los cambios de la disponibilidad de RH en el futuro así como su sensibilidad al cambio climático.
 
@@ -143,15 +152,20 @@ La presente tesis tiene como objetivo general determinar la vulnerabilidad de la
 \vspace*{0.5mm}
 \section{REVISIÓN DE LITERATURA}
 
-\subsection{Disponibilidad de los Recursos Hídricos}
+\thispagestyle{empty}
 
-El Plan Nacional de los Recursos Hídricos \citep[PNRH;][]{PNRH2013} enfatiza que de acuerdo a La Constitución Política del Perú (1993), el recurso hídrico (RH) es un patrimonio de la Nación y que el Estado (Peruano) es soberano en su aprovechamiento (articulo 66.$^{\circ}$). Asimismo, la Ley de Recursos Hídricos, Ley n$^{\circ}$ 29338, tiene por finalidad regular el uso y la gestión integrada de los recursos hídricos de acuerdo a específicos principios que ha supuesto un cambio en el modelo de gestión del agua en el Perú. 
+%\subsection{Disponibilidad de los Recursos Hídricos}
+\subsection{DISPONIBILIDAD DE LOS RECURSOS HÍDRICOS}
+
+El Plan Nacional de los Recursos Hídricos (PNRH) \citep{PNRH2013} enfatiza que de acuerdo a La Constitución Política del Perú (1993), el recurso hídrico (RH) es un patrimonio de la Nación y que el Estado (Peruano) es soberano en su aprovechamiento (articulo 66.$^{\circ}$). Asimismo, la Ley de Recursos Hídricos, Ley n$^{\circ}$ 29338, tiene por finalidad regular el uso y la gestión integrada de los recursos hídricos de acuerdo a específicos principios que ha supuesto un cambio en el modelo de gestión del agua en el Perú. 
 
 En este contexto, los RH (naturales, agua dulce o continental) se definen como aquéllos procedentes de las precipitaciones que no se han evapotranspirado y que pueden estar circulando por los cauces en forma de recursos superficiales, infiltrados en el terreno formando acuíferos, y que constituyen los recursos subterráneos o almacenados en lagos, lagunas o embalses artificiales. El mismo concepto implica que proceden del régimen natural, es decir, que su valor y distribución temporal no han sido alterados por ningún tipo de explotación humana.
 
 De acuerdo a la delimitación de las cuencas hidrográficas y a una metodología de ámbito regional en el Perú \citep{PNRH2013}, es posible calcular los RH en régimen natural. En la Tabla \ref{tab:RH_dist}, se muestra la cantidad de RH en régimen natural distribuido por las tres principales regiones hidrográficas: Pacifico, Amazonas, y Titicaca. La Tabla \ref{tab:RH_dist} permite observar grandes contrastes entre las tres vertientes hidrográficas, se aprecia la escasez en las cuencas del Pacífico, y de forma contraria, el gran volumen que se generan en las cuencas del Amazonas. Para mayor detalle a escala de principales cuencas hidrográficas revisar el documento original del PNRH \citep{PNRH2013}.
 
+\clearpage
 \input{FigsANDTables/RH_dist.tex}
+\clearpage
 
 Se debe mencionar otros RH naturales también, como los glaciares que constituyen reservas de agua para diversos usos, o lagunas disponibles de considerable cantidad (de origen glaciar principalmente) que puede ser aprovechadas como embalses reguladores. Este recurso se encuentra en explotación, y suponen una reserva de agua regulada de forma natural. De igual manera, el agua subterránea es un RH natural, que corresponde a la parte de precipitación que se filtra a través del suelo hasta llegar al material rocoso que está saturado de agua. Las aguas subterráneas tienen una importancia considerable en el país, principalmente para las cuencas áridas de la vertiente del Pacifico, donde se destinan fundamentalmente para el riego y población \citep{PNRH2013}. 
 
@@ -160,9 +174,10 @@ Dado que la distribución de la población, las condiciones climáticas e hidrol
 Conceptualmente, la disponibilidad de RH se puede definir como la utilización del agua par un fin específico. Por ejemplo, para el riego, la generación de energía, abastecimiento de agua, etc. Entonces, la disponibilidad de RH es una función de la oferta y demanda relativa \citep{averyt2013sectoral}. Sin embargo, es sorprendentemente complejo y difícil identificar un indicador genérico comúnmente aceptado de escasez o disponibilidad de RH en la práctica. Las definiciones de “demanda” y “oferta” varían sustancialmente entre los estudios, lo que dificulta la comparación directa de los resultados entre estos. El desafío de la creación de un consenso se debe, en parte, a la falta de una o un conjunto de preguntas claramente definidas y comúnmente compartidas para la evaluación de la disponibilidad de RH \citep{xu2017water}.
 
 \clearpage
-En forma practica, la mayoría de investigadores calcula la disponibilidad de los RH usando el principio de balance hídrico \citep{WMO2012,PNRH2013,juniati2018proposing}. Por ejemplo, a través de modelos hidrológicos los cuales siguen un marco conceptual de captación como se muestra en la Figura \ref{fig:water_balance_wmo}. Aunque dependiendo de la disponibilidad de datos, se puede asumir simplificaciones en las variables.
-
 \input{FigsANDTables/water_balance_wmo.tex}
+\clearpage
+
+En forma practica, la mayoría de investigadores calcula la disponibilidad de los RH usando el principio de balance hídrico \citep{WMO2012,PNRH2013,juniati2018proposing}. Por ejemplo, a través de modelos hidrológicos los cuales siguen un marco conceptual de captación como se muestra en la Figura \ref{fig:water_balance_wmo}. Aunque dependiendo de la disponibilidad de datos, se puede asumir simplificaciones en las variables.
 
 De la Figura \ref{fig:water_balance_wmo}, las cuatro reservas de agua se describen de la siguiente manera:
 
@@ -180,13 +195,14 @@ De la Figura \ref{fig:water_balance_wmo}, las cuatro reservas de agua se describ
 El volumen en el sistema de suministro de agua generalmente se trata como constante y no necesita ser evaluado con gran precisión (a excepción de escalas temporales y espaciales finas). Entonces, para cada almacenamiento y para cualquier intervalo de tiempo inicial ($t1$) a posterior ($t1$), el balance hídrico depende del balance de masa:
 
 \begin{equation}
- \text{Almacenamiento }(t1) = \text{Almacenamiento} (t0) + \text{Entrada neta }(t1 – t0)
+Almacenamiento\,(t1) =  Almacenamiento\,(t0) + Entrada\:neta\,(t1 - t0)
 \label{equ:waterBalance_By_WMO}
 \end{equation}
 
 Se debe mencionar que la descripción anterior hace mayor énfasis a la disponibilidad física de los RH. Un mayor panorama, y otras definiciones se encuentran en \citet{xu2017water} y \citet{juniati2018proposing}. Una concepción de la disponibilidad de los RH centrados en la escasez socio-económica del agua se aprecia en \citet{sullivan2003water}.
 
-\subsection{Cambio Climático}
+%\subsection{Cambio Climático}
+\subsection{CAMBIO CLIMÁTICO}
 
 El clima de una región es simplemente definido como el promedio de las condiciones atmosféricas en un periodo de 30 años. Entonces, el cambio climático sería los cambios en el promedio de las condiciones atmosféricas en un largo periodo de tiempo también. De acuerdo a la IPCC \citep{IPCC2007}, el cambio climático es determinado como ``el cambio en el estado del clima que puede ser identificado por cambios en el promedio y/o la variabilidad de sus propiedades, y persistir por un extenso periodo de tiempo, normalmente décadas o más”.
 
@@ -194,7 +210,8 @@ El clima ha cambiado a lo largo de la historia de la tierra debido a cambios en 
 
 A escala mundial, la demanda de los RH ha aumentado debido a varios factores como el crecimiento de la población, la contaminación del agua, el progreso económico, el uso de la tierra y el cambio climático, lo cual reduce la disponibilidad de RH en condiciones de un futuro incierto \citep{Davies2011}. Desde el punto de vista socio-ambiental, que incluyen la agricultura, el turismo y la conservación de la biodiversidad, la calidad y cantidad de los RH es evaluable, por lo que las medidas de adaptación para el sector del agua están inevitablemente vinculadas con las políticas en diversos campos \citep{Field2014}. También se espera que el cambio climático intensifique el ciclo hidrológico mundial, lo que tendrá como resultado impactos directos en la disponibilidad general de los recursos hídricos para usos domésticos y agrícolas \citep{Huntington2006}. A escala local, las intensidades de lluvia se verán afectadas, lo que provocará inundaciones en las riberas de los ríos más continuamente \citep{Wilby2010}.
 
-\subsection{Vulnerabilidad}
+\subsection{VULNERABILIDAD}
+%\subsection{Vulnerabilidad}
 
 De acuerdo a la IPCC, la vulnerabilidad puede ser definida como el grado en que un sistema es susceptible y no puede hacer frente a los efectos adversos del cambio climático, incluida la variabilidad climática y los extremos. La vulnerabilidad es una función del carácter, la magnitud y la tasa de cambio climático y la variación a la que está expuesto un sistema (social-ecológico), su sensibilidad y su capacidad de adaptación \citep{parry2007climate}.
 
@@ -218,11 +235,14 @@ Evaluar la vulnerabilidad hace referencia a evaluar estos procesos, es decir med
 
 El rango de técnicas y/o herramientas para evaluar la vulnerabilidad de los recursos hídricos se engloba en dos principales enfoques: arriba-abajo (“top-down") y abajo-arriba (“bottom-up"). Estos son detallados en la siguiente sección.
 
-\input{FigsANDTables/Nelitz01.tex}
-
-\subsection{Enfoques de evaluación de la vulnerabilidad al cambio climático}
+%\subsection{Enfoques de evaluación de la vulnerabilidad al cambio climático}
+\subsection{ENFOQUES DE EVALUACIÓN DE LA VULNERABILIDAD AL CAMBIO CLIMÁTICO}
 
 De acuerdo a \citet{Wilby2010} existen dos perspectivas principales para la evaluación de la vulnerabilidad al cambio climático. Estos son denominados: de arriba hacia abajo (“top-down", conocidos como ``guiados por escenarios") y de abajo hacia arriba (“bottom-up").
+
+\clearpage
+\input{FigsANDTables/Nelitz01.tex}
+\clearpage
 
 El enfoque arriba-abajo implica en primer lugar reducir las proyecciones climáticas de los GCM a un rango de escenarios. Los escenarios locales resultantes luego se incorporan a los modelos de impacto (para estimar, por ejemplo, caudales futuros mediante modelos hidrológicos), antes de proceder finalmente en medidas de adaptación para maximizar cualquier beneficio o contrarrestar los riesgos anticipados. El término de “arriba hacia abajo” se usa porque la información se coloca en cascada de un paso a otro, con el número de permutaciones del escenario de emisión, el modelo climático, el método de reducción de escala, etc., que prolifera en cada etapa (Figura \ref{fig:tpbu}). 
 
@@ -236,12 +256,16 @@ En la práctica, la vulnerabilidad climática está determinada por una serie de
 
 El propósito de estos enfoques radica en generar información de la vulnerabilidad al cambio climático en el contexto de recursos hídricos (cuencas hidrográficas). El conocimiento generado por una evaluación de vulnerabilidad se utiliza para informar la asignación de recursos para la planificación y adaptación al cambio climático \citep{nelitz2013tools,Dessai2004}. 
 
-\subsection{Evapotranspiración actual}
+\thispagestyle{empty}
+
+%\subsection{Evapotranspiración actual}
+\subsection{EVAPOTRANSPIRACIÓN ACTUAL}
 
 De acuerdo a \citet{wang2012review}, la evapotranspiración terrestre (evapotranspiración actual, $AE$), es el agua transferida desde la superficie terrestre a la atmósfera. Este intercambio de agua generalmente implica un cambio de fase (del agua) de líquido (o hielo) a gas, que absorbe energía y enfría la superficie de la tierra. El calor latente que acompaña a $AE$ es $\lambda E$, donde $\lambda$ es el calor latente de vaporización. Estos términos son necesarios para los modelos numéricos de predicción meteorológica a corto plazo y para las simulaciones climáticas a más largo plazo y/o para el diagnóstico del cambio climático. En tales modelos, $AE$ generalmente se parametriza como la suma de la evaporación del suelo, la evaporación de la vegetación y la transpiración de la vegetación; este último es un proceso que se combina con la absorción de carbono a través de la fotosíntesis.
 
 \vspace*{.5cm}
 \input{FigsANDTables/wang01.tex}
+\thispagestyle{empty}
 
 \clearpage
 El agua es transferida de la superficie terrestre a la atmósfera a través de turbulencias, que puede ser definido como remolinos irregulares de aire de diferentes tamaños superpuestos entre si (Figura \ref{fig:wang01}), y que tienen la capacidad de transportar tales cantidades en comparación a la difusión molecular. En días de mayor radiación, estos remolinos tienden a tener mayor magnitud (aire ascendente) debido al calentamiento del suelo. Su tamaño diverge tanto en la horizontal como vertical. 
@@ -249,12 +273,15 @@ El agua es transferida de la superficie terrestre a la atmósfera a través de t
 El agua no solo se transfiere aerodinámicamente, si no también mediante procesos biológicos (Figura \ref{fig:wang02}. La transpiración, es la evaporación del agua en el sistema vascular de las plantas con perdidas por medio de las estomas de las hojas. Según \citet{dirmeyer2006gswp} y \citet{lawrence2007partitioning}, este proceso contribuye en mayor medida al $AE$ total, y esta relacionado con la absorción del carbono en la hoja a través de la conductancia de la misma.
 
 \input{FigsANDTables/wang02.tex}
+\thispagestyle{empty}
 
-\citet{wang2012review} menciona que una de las primeras teorías en abordar $AE$ fue aquella desarrollado por \citet{monin1954basic} en los años 50's, denominado Teoría de la similitud de Monin-Obukhov (MOST). Ellos fueron uno de los primeros en relacionar $AE$ y los flujos de calor sensible a partir de mediciones de vientos, temperatura y humedad cercanos a la superficie al enlazar los flujos de turbulencia con los gradientes de viento, temperatura y humedad. Adicionalmente, la ecuación de Penman-Monteith \citep{penman1948natural,monteith1965evaporation} que usa la radiación de superficie, temperatura y humedad para estimar $AE$. La ecuación de Penman describe la evaporación de una superficie de agua abierta o de vegetación corta. Según \citet{wang2012review}, la ecuación de Penman puede ser vista como una combinación de MOST y el balance de energía de superficie (SEB). Para un mayor detalla de estas definiciones, revisar \citet{wang2012review}. Otra emergente teoría, mencionada por \citet{zhang2016review}, es la teoría del Principio Máximo de Entropía (MEP) que explica la termodinámica del no equilibrio y proporciona nuevos enfoques para estimar los flujos de superficie. MEP es derivada del principio de máxima entropía formulado primero como un método general para asignar distribuciones de probabilidad en mecánica estadística. Revisar \citet{zhang2016review} para un mayor entendimiento del enfoque. 
+\citet{wang2012review} menciona que una de las primeras teorías en abordar $AE$ fue aquella desarrollado por \citet{monin1954basic} en los años 50's, denominado Teoría de la similitud de Monin-Obukhov (MOST). Ellos fueron uno de los primeros en relacionar $AE$ y los flujos de calor sensible a partir de mediciones de vientos, temperatura y humedad cercanos a la superficie al enlazar los flujos de turbulencia con los gradientes de viento, temperatura y humedad. Adicionalmente, la ecuación de Penman-Monteith \citep{penman1948natural,monteith1965evaporation} que usa la radiación de superficie, temperatura y humedad para estimar $AE$. La ecuación de Penman describe la evaporación de una superficie de agua abierta o de vegetación corta. Según \citet{wang2012review}, la ecuación de Penman puede ser vista como una combinación de MOST y el balance de energía de superficie (SEB). Para un mayor detalla de estas definiciones, revisar \citet{wang2012review}. Otra emergente teoría, mencionada por \citet{zhang2016review}, es la teoría del Principio Máximo de Entropía (MEP) que explica la termodinámica del no equilibrio y proporciona nuevos enfoques para estimar los flujos de superficie. MEP es derivada del principio de máxima entropía formulado primero como un método general para asignar distribuciones de probabilidad en mecánica estadística. Para un mayor entendimiento del enfoque, \citet{zhang2016review} publicaron una revisión sobre este tema.
 
 Considerando lo mencionado, se evidencia que $AE$ es un proceso controlado por la combinación de factores físicos y biológicos. Por lo tanto, los relativos impactos de los diferentes procesos en $AE$ varían en el tiempo y espacio. A escala global, \citet{zhang2015vegetation} separa $AE$ en tres factores independientes: demanda (en función de la temperatura del aire, humedad y velocidad del viento), suministro (en función de la precipitación) y energía (en función de la radiación y nubosidad). Los resultados de \citet{zhang2015vegetation} (Figura \ref{fig:zhang_rev01}) resaltaron que el suministro de agua influye mas en $AE$ en 49\% del área de la tierra, principalmente en regiones áridas y semi-áridas. La energía disponible domina en un 32\%, específicamente en regiones de clima húmedo tropical y en latitudes altas del norte. La demanda de agua atmosférica es el factor de control dominante en más del 19\% del mundo, principalmente en áreas de alta montaña y latitudes altas. 
 
+\clearpage
 \input{FigsANDTables/zhang_rev01.tex}
+\clearpage
 
 \subsubsection{Observaciones de evapotranspiración actual}
 
@@ -262,19 +289,24 @@ Considerando lo mencionado, se evidencia que $AE$ es un proceso controlado por l
 
 \vspace{.5cm}
 \input{FigsANDTables/TableZhang01.tex}
+\thispagestyle{empty}
 
 \subsubsection{Observaciones basados en percepción remota}
 
 Debido a la rentabilidad, amplia cobertura, reproducibilidad y moderada a alta precisión, la estimación de $AE$ por percepción remota ha sido utilizada como principal fuente de información y área de estudio en las ultimas décadas. De acuerdo a \citet{zhang2016review}, la estimación de $AE$ basada en percepción remota comenzó aproximadamente en la década de los 80's y ha evolucionado a una gran variedad de orientaciones y modelos. Es evidente que no existe un consenso de cual enfoque/método es mejor ya que cada uno presentan ventajas y desventajas. 
 
-Un resumen de las diferentes técnicas fueron provistas en \citet{zhang2016review}, y una versión simplificada se encuentra en la Tabla \ref{tab:TableZhang02}. Para un mayor entendimiento de la Tabla \ref{tab:TableZhang02}, los acrónimos usados en la misma hacen referencia al índice de temperatura superficial-vegetación (LST-VI), Penman-Monteith \citep[PM;][]{penman1948natural,monteith1965evaporation} y Priestley-Taylor \citep[PT;][]{priestley1972assessment}.
+\thispagestyle{empty}
+
+Un resumen de las diferentes técnicas fueron provistas en \citet{zhang2016review}, y una versión simplificada se encuentra en la Tabla \ref{tab:TableZhang02}. Para un mayor entendimiento de la Tabla \ref{tab:TableZhang02}, los acrónimos usados en la misma hacen referencia al índice de temperatura superficial-vegetación (LST-VI), Penman-Monteith (PM) \citep{penman1948natural,monteith1965evaporation} y Priestley-Taylor (PT) \citep{priestley1972assessment}.
 
 \vspace{.5cm}
 \input{FigsANDTables/TableZhang02.tex}
+\thispagestyle{empty}
 
-\subsection{Enfoque de Budyko}
+%\subsection{Enfoque de Budyko}
+\subsection{ENFOQUE DE BUDYKO}
 
-El enfoque de Budyko establece una relación entre el régimen hidrológico y los factores energéticos del clima. Los orígenes de este marco se remontan a principios del siglo XX, mediante los trabajos de \citet{schreiber1904relationship} y \citet{ol1911evaporation}. Sin embargo, M.I. Budyko fue el primero en introducirlo a través de una simple relación entre la evaporación (evapotranspiración) actual anual promedio, precipitación anual promedio y el índice de aridez, a escala de cuenca hidrográfica. Esta relación fue conocida como la curva de Budyko \citep{budyko1958heat}.
+El enfoque de Budyko establece una relación entre el régimen hidrológico y los factores energéticos del clima. Los orígenes de este marco se remontan a principios del siglo XX, mediante los trabajos de \citet{schreiber1904relationship} y \citet{ol1911evaporation}. Sin embargo, \citet{budyko1958heat} fue el primero en introducirlo a través de una simple relación entre la evaporación (evapotranspiración) actual anual promedio, precipitación anual promedio y el índice de aridez, a escala de cuenca hidrográfica. Esta relación fue conocida como la curva de Budyko \citep{budyko1958heat}.
 
 Budyko supuso que la evaporación anual promedio está controlada por la disponibilidad de agua (aproximada por la precipitación) y la demanda atmosférica (representada por la radiación neta). En regiones muy secas del mundo con suficiente energía disponible para evaporar, la evaporación anual seria próximo a la precipitación anual (limite del agua). De forma contraria, en regiones muy húmedas, la evaporación anual se aproximaría a la demanda atmosférica o evaporación potencial (limite de energía). Por lo tanto, dependiendo de la aridez de la región, el agua disponible o la energía disponible limita la evaporación de acuerdo a las siguientes ecuaciones \citep{budyko1958heat}:
 
@@ -345,6 +377,8 @@ La ecuación no paramétrica de Budyko fue creada a partir de información de m�
 \label{equ:no_parametric_budyko_equation}
 \end{equation}
 
+\thispagestyle{empty}
+
 Posteriormente, a partir de darle un mayor sentido teórico y físico, se empezaron a desarrollar nuevos modelos analíticos basado en consideraciones fenomenológicas con análisis dimensional y razonamiento matemático. Uno de estos fue Fu \citep{Fu1981} que expreso una nueva forma de la curva de Budyko e introdujo un parámetro $\omega$ \citep{Zhang2004}: 
 
 \begin{equation}
@@ -356,8 +390,9 @@ Donde $\omega$ tiene el rango de $[1,\infty)$. La ecuación de \citet{Fu1981} ha
 
 \vspace*{.5cm}
 \input{FigsANDTables/budyko01.tex}
+\thispagestyle{empty}
 
-En general, el marco de Budyko puede considerarse como un modelo tipo “lumped” y es una estimación rápida de primer orden de la precipitación en forma de (que se particiona en) evaporación y escorrentía. Es simple y tiene pocos requisitos de entrada en comparación con los modelos hidrológicos complejos, como el semi-distribuido \citep{mianabadi2020budyko}. De igual manera, se puede mencionar que el enfoque de Budyko es “darwiniano”, en oposición a “newtoniano” \citep{wang2016advances}, porque renuncia a las explicaciones reduccionistas basadas en ecuaciones constitutivas (de forma aislada) a favor de establecer relaciones universales (como un todo) basadas únicamente en las leyes de equilibrio de masa y energía a las que cualquier sistema físico debe cumplir \citep{sposito2017understanding}.
+En general, el marco de Budyko puede considerarse como un modelo tipo “lumped” y es una estimación rápida de primer orden de la precipitación en forma de (que se particiona en) evaporación y escorrentía. Es simple y tiene pocos requisitos de entrada en comparación con los modelos hidrológicos complejos, como del tipo semi-distribuido \citep{mianabadi2020budyko}. De igual manera, se puede mencionar que el enfoque de Budyko es “darwiniano”, en oposición a “newtoniano” \citep{wang2016advances}, porque renuncia a las explicaciones reduccionistas basadas en ecuaciones constitutivas (de forma aislada) a favor de establecer relaciones universales (como un todo) basadas únicamente en las leyes de equilibrio de masa y energía a las que cualquier sistema físico debe cumplir \citep{sposito2017understanding}.
 
 Finalmente, es importante resaltar que el estado estable de una cuenca no es un hecho del todo, ya que se ha evidenciado que los procesos hidrológicos están bajo la influencia del cambio natural y antropogénico \citep{greve2016two,moussa2016budyko,fathi2019new}. La intervención humana, como la urbanización, la extracción de agua subterránea, la deforestación y la alteración de la cubierta terrestre, causan cambios significativos en el ciclo hidrológico natural y el equilibrio hídrico de la mayoría de las cuencas hidrográficas en todo el mundo. Del mismo modo, a escalas temporales mas finas, el contenido del almacenamiento de agua se convierte en un tema importante (ya no puede ser simplificado) en el marco de Budyko. Por lo tanto, para este tipo de aplicaciones, el enfoque original de Budyko es complicado de asumir. Sin embargo, muchos trabajos se han desarrollado para extender su aplicabilidad a condiciones de estado no estable (o no estacionario). Para una mayor revisión de estos nuevos enfoques revisar el reciente trabajo de \citet{mianabadi2020budyko}.
 
@@ -375,6 +410,8 @@ En este sentido, \citet{Greve2015} motivado por la falta de explicación sobre l
 
 \citet{Greve2015} estableció la representación probabilística del enfoque de Budyko basado en la Ecuación \ref{equ:fuEqu} \citep{Fu1981}. El parámetro $\omega$ es un parámetro matemático necesario para la solución dentro del espacio de Budyko, y no tiene significado físico a priori. Entonces, por definición $\omega \in\,[1,\infty)$ y cada punto dentro de los limites (del espacio) puede ser asignado a un $\omega$ especifico. Bajo condiciones reales, el valor mínimo de $\omega$ no es necesariamente 1, puede ser mayor \citep{Zhang2004}. 
 
+\thispagestyle{empty}
+
 El valor de $\omega$ es diverso en los diferentes estudios aplicados y difiere entre cuencas. En la actualidad, aun no se ha identificado su principal influencia. Por lo tanto, \citet{Greve2015} hipotetizó que la combinación integradora de todas las influencias de la cuenca y el clima (excepto de $PE/P$) en $\omega$ puede ser caracterizado como un proceso estocástico, asumiendo que $\omega$ sigue una determinada distribución: $\omega \sim D(\textbf{p})$, con $D$ siendo una distribución arbitraria con cola inferior limitado a 1 (por $\omega \in\,[1,\infty)$, siendo cualquiera) y $\textbf{p}$ los parámetros de la distribución. Dado esto, es entonces posible obtener una distribución de $AE/P$ para un $PE/P$ dado que depende de los parámetros de la distribución especifica $D(\textbf{p})$ para $\omega$.
 
 Ya que no existe una solución analítica factible para la función de densidad de probabilidad de $AE/P$, \citet{Greve2015} propuso una solución mediante simulación estocástica (siguiendo el enfoque de Monte Carlo). Entonces, para un numero grande de simulaciones, $n$ variables aleatorias $y_{n} = AE/P$ fueron generadas de la Ecuación \ref{equ:fuEqu} para un $x = PE/P$ asumiendo $\omega \sim D(\textbf{p})$. Las propiedades de la distribución (mediana, momentos, cuantiles, etc) de Budyko fueron estimados directamente de la simulación de distribución o del estimado mediante la técnica de kernel (si el $n$ de simulaciones fue pequeña).
@@ -382,13 +419,16 @@ Ya que no existe una solución analítica factible para la función de densidad 
 Debido a que existe una variedad de distribuciones teóricas que se adapta a la condición $\omega \in\,[1,\infty)$, \citet{Greve2015} ejemplifico el Budyko probabilístico en tres familias. Los cuales fueron (Figura \ref{fig:Greve02}): i) distribución normal truncada (limite de cola inferior a 1), ii) distribución uniforme; y iii) dos distribuciones gamma (con la forma $1 + \Gamma (k, \theta )$, con $k$ y $\theta$ siendo el parámetro forma y escala respectivamente). De estas, solo tres (Figura \ref{fig:Greve02}a,b,c) comparten una mediana en común $\omega = 2.6$ que representa a la curva de Budyko original, mientras que la de la Figura \ref{fig:Greve02}d tiene una valor menor, revelando que este nuevo enfoque no esta limitado a su versión original afectando inherentemente a los momentos centrales de orden superior de la distribución de Budyko. La complejidad de la distribución estimada de Budyko resalta la no linealidad del espacio de Budyko y la necesidad de establecer un marco probabilístico en lugar del enfoque determinista original. Así, se ilustra nuevas posibilidades para determinar medidas estadísticas de distancia a la curva media, así como también identificar cuencas extremas y comparar desviaciones de la curva (media) bajo diferentes condiciones climáticas en un perspectiva probabilística. Siendo de utilidad para : i) evaluar la influencia de las características del suelo en los recursos hídricos y la retroalimentación asociada a la atmósfera, ii) pruebas de significancia robusta, iii) evaluar el cambio climático, y iv) validación de datos y modelos.
 
 \input{FigsANDTables/Greve02.tex}
+\thispagestyle{empty}
 
 \paragraph{Casos de estudio}\mbox{}
 
 A la fecha, existe solo unas cuantas publicaciones científicas que abordan la aplicación del Budyko probabilístico. El primero fue realizado en el misma trabajo donde fue presentado, es decir en \citet{Greve2015}. Otros, en un contexto de sensibilidad al cambio climático por \cite{Singh2015} en la India; y por \citet{gudmundsson2016sensitivity} a escala global. Con fines de ilustración y claridad, se presenta a modo de resumen las aplicaciones de \citet{Greve2015} y \citet{Singh2015}.
 
+
 \clearpage
 \input{FigsANDTables/Greve03.tex}
+\floatpagestyle{empty}
 \clearpage
 
 \citet{Greve2015} usaron una muestra de 411 cuencas hidrográficas (Figura \ref{fig:Greve03}a, del Model Parameter Esitmation Experment (MOPEX)) con continuidad temporal entre 1974-2003 y calculo las climatologías (30 años) para $P$, $PA$ y $AE P - Q$. Para cada una de estas cuencas estimo numéricamente el $\omega$ siguiendo el enfoques de \citet{Zhang2004}. La distribución empírica de $\omega$ de la base MOPEX tuvo las siguientes características: 1) limite inferior limitada a 1, y 2) es sesgada a la derecha (Figura \ref{fig:Greve03}b). Por lo tanto, basado en esta inspección visual, \citet{Greve2015} asumieron que el $\omega$ de cada cuenca sigue aproximadamente una distribución gamma sesgado a la derecha con cola inferior limitado a 1 ($\omega \sim 1 + \Gamma (k, \theta )$) con un parámetro de forma $k \approx 4.45 \pm 0.45$ y escala $\theta \approx 0.37 \pm 0.038$ (Figura \ref{fig:Greve03}b) estimados mediante el método de máxima verosimilitud. Se debe mencionar que la selección de la distribución gamma fue arbitraria ya que solo fue basado en la forma de la distribución empírica de $\omega$. Otras distribuciones también puede ser ajustadas. Sin embargo, \citet{Greve2015} justificaron su selección por medio de una validación cruzada.
@@ -402,23 +442,32 @@ De igual manera, se cuantifico la incertidumbre de la predictibilidad de $AE/P$ 
 
 El otro caso de estudio de \citet{Singh2015} fue realizado con el objetivo de determinar la vulnerabilidad de los disponibilidad del agua en la India debido al cambio climático. Esto utilizando el enfoque abajo-arriba (en base a espacios climáticos hipotéticos) en conjunto con el Budyko probabilístico (también con la Ecuación \ref{equ:fuEqu} de \citet{Fu1981}). \citet{Singh2015} hizo uso de datos grillados de $T$, $P$ y $AE$, donde este ultimo fue proveniente de datos de percepción remota \citep{zhang2016review}, y su análisis fue a escala de distritos. La metodología empleada puede dividirse en tres principales pasos (Figura \ref{fig:Singh2015}): i) identificación de espacios climáticos vulnerables, ii) valores de $AE$ en función del paso i), y iii) vulnerabilidad y umbrales de cambio. 
 
+\thispagestyle{empty}
+
 \input{FigsANDTables/Singh2015.tex}
 
-En primer lugar, se determino los espacios climáticos (100 $\times$ 100, 1000 en total) de posibles variaciones futuras de las variables $P$ y $PE$ (en función de $T$). Para cada uno de estos escenarios se aplico el Budyko probabilístico para obtener proyecciones de $AE/P$. Lo que permitió no solo estimar la disponibilidad del agua, si no también la incertidumbre asociada (definición del método). Finalmente, se identifico umbrales de cambio critico donde se presento un decrecimiento de la disponibilidad de agua (aumento de la vulnerabilidad). Una diferencia principal al de la versión original de \citet{Greve2015}, fue que \citet{Singh2015} no ajusto una distribución teórica (no asunción de alguna forma particular), sino, solo utilizo la distribución empírica de $\omega$, la cual fue obtenida (calibrada) a escala de distrito y agrupada en seis regiones homogéneas. \citet{Singh2015} mencionan que de esta manera no se pierde ninguna información de los datos y que a la vez se mantiene los supuestos sobre límites de incertidumbre de las estimaciones a un mínimo. Por lo tanto, se obtuvo seis distribuciones empíricas de $\omega$ en toda la India, las cuales fueron validadas a escala regional (en las seis) y nacional.
+En primer lugar, se determino los espacios climáticos (100 $\times$ 100, 1000 en total) de posibles variaciones futuras de las variables $P$ y $PE$ (en función de $T$). Para cada uno de estos escenarios se aplico el Budyko probabilístico para obtener proyecciones de $AE/P$. Lo que permitió no solo estimar la disponibilidad del agua, si no también la incertidumbre asociada (definición del método). Finalmente, se identifico umbrales de cambio critico donde se presento un decrecimiento de la disponibilidad de agua (aumento de la vulnerabilidad).
+
+\thispagestyle{empty}
+
+Una diferencia principal al de la versión original de \citet{Greve2015}, fue que \citet{Singh2015} no ajusto una distribución teórica (no asunción de alguna forma particular), sino, solo utilizo la distribución empírica de $\omega$, la cual fue obtenida (calibrada) a escala de distrito y agrupada en seis regiones homogéneas. \citet{Singh2015} mencionan que de esta manera no se pierde ninguna información de los datos y que a la vez se mantiene los supuestos sobre límites de incertidumbre de las estimaciones a un mínimo. Por lo tanto, se obtuvo seis distribuciones empíricas de $\omega$ en toda la India, las cuales fueron validadas a escala regional (en las seis) y nacional.
 
 Los resultados demostraron que la utilización del Budyko probabilístico de \citet{Singh2015} fue aceptable ya que se alcanzaron errores de hasta 18\% en la validación cruzada. Adicionalmente, mediante una variación de -50\% a 80\%, y de 0\% a 20\% en $P$ y $PET$ (en función de $T$), respectivamente; se logro estimar la vulnerabilidad e incertidumbre asociada (visto como IQR) a escala de la India. Estos fueron comparados con las salidas de GCMs, demostrando no solo la capacidad del Budyko probabilístico, sino también del enfoque abajo-arriba. De esto, se encontró que el cambio en $P$ tiene un control mucho mas fuerte sobre el valor medio del índice de vulnerabilidad que el cambio de $T$ (Figura \ref{fig:Singh02}). Los resultados también revelaron que las regiones que experimentan tendencias hacia condiciones secas tienen menores rangos de incertidumbre y viceversa en la escala de toda India, lo que se refleja en los valores más bajos de IQR en comparación con lo observado en las regiones que experimentan tendencias a ser mas húmedos.
 
 Este mismo análisis se efectuó a escala de distrito, pero con la finalidad de identificar umbrales de cambio para un nivel de vulnerabilidad. La Figura \ref{fig:Singh02} muestra los cambios de $P$ que llevarían a una reducción del 25\% en la disponibilidad de los recursos hídricos para un nivel de cambio $PET$ (10\%). Esto fue posible al hacer uso de las distribuciones regionales de $\omega$. Resalta que el sur de la India es mas vulnerable a un decrecimiento de $P$, ya que una reducción de $10$ en $P$ conllevaría a un aumento de la vulnerabilidad de los recursos hídricos en 25\%. Similar a lo anterior, otros escenarios también puede ser factibles. 
 
-
+\clearpage
 \input{FigsANDTables/Singh02.tex}
-
+\clearpage
 
 \clearpage
 \vspace*{0.5mm}
 \section{MATERIALES Y METODOLOGÍA}
 
-\subsection{Materiales}
+\thispagestyle{empty}
+
+%\subsection{Materiales}
+\subsection{MATERIALES}
 
 \subsubsection{Datos}
 
@@ -443,10 +492,11 @@ Este mismo análisis se efectuó a escala de distrito, pero con la finalidad de 
 
 \begin{itemize}
   \item \LaTeX\  2018 - \url{https://www.overleaf.com}.
-  \item Python 3.6.x - \url{https://github.com/adrHuerta/prob_Budyko}.
+  \item Python 3.6.x - (Anexo 1).
 \end{itemize}
 
-\subsection{Metodología}
+\subsection{METODOLOGÍA}
+%\subsection{Metodología}
 
 \subsubsection{Recopilación de datos y materiales}
 
@@ -467,11 +517,13 @@ Ambos productos se encuentran a una resolución espacial de 0.1$^{\circ}$ y temp
 
 \input{FigsANDTables/00_PISCOproducts.tex}
 
+\thispagestyle{empty}
+
 \clearpage
 
 \paragraph{Evapotranspiración actual}\mbox{}
 
-Para la metodología propuesta se hace indispensable contar con datos de $AE$, sin embargo, no se cuenta con información observada en Perú. Por lo que se hace necesario usar productos grillados globales de $AE$, los cuales provienen de datos de percepción remota, satélite y reanálisis. Debido a que no existe un producto considerado el mejor a nivel del territorio nacional, se hace una selección y/o validación de los productos disponibles en este estudio, para posteriormente usar el de mejor rendimiento y/o que presente menor error. Los datos de $AE$ evaluados en esta tesis fueron: GLEAM, MODIS16, SSEBop, TerraClimate y P-LSH. La Tabla \ref{tab:ETproducts} y Anexo 1 resume las características de los productos.
+Para la metodología propuesta se hace indispensable contar con datos de $AE$, sin embargo, no se cuenta con información observada en Perú. Por lo que se hace necesario usar productos grillados globales de $AE$, los cuales provienen de datos de percepción remota, satélite y reanálisis. Debido a que no existe un producto considerado el mejor a nivel del territorio nacional, se hace una selección y/o validación de los productos disponibles en este estudio, para posteriormente usar el de mejor rendimiento y/o que presente menor error. Los datos de $AE$ evaluados en esta tesis fueron: GLEAM, MODIS16, SSEBop, TerraClimate y P-LSH. La Tabla \ref{tab:ETproducts} y Anexo 2 resume las características de los productos.
 
 \begin{itemize}
 	\item GLEAM: El Modelo Global de Evaporación Continental de Amsterdam (GLEAM) es un modelo basado en procesos, que describe empíricamente los procesos necesario para estimar $AE$ a partir de información satelital \citep{Martens2017}. El marco metodológico consiste en tres pasos: 1) interceptación de lluvia impulsada por observaciones de lluvia y vegetación; 2) evaporación potencial calculada usando la ecuación de PT e impulsada por observaciones satelitales; y 3) un factor de estrés que atenúa la evaporación potencial de acuerdo a una relación semi-empírica entre la vegetación de microondas y las observaciones de profundidad óptica (VOD) y las estimaciones de humedad del suelo de la raíz. %%% revisar GLEAM background
@@ -490,14 +542,16 @@ Para la metodología propuesta se hace indispensable contar con datos de $AE$, s
 
 \paragraph{Caudales}\mbox{}
 
-Para la investigación se obtuvo información de caudales que se encuentran en la salida de flujo principal de la cuenca. Se utilizaron alrededor de 13 estaciones hidrológicas del trabajo de \citet{Aybar2019}, las cuales fueron provistas por SENAMHI y del Observatorio de Investigación HYdro-geoquímica de la Cuenca AMazónica (SO-HYBAM). La información se encuentra a escala temporal mensual en el periodo de 1980 al 2016. Se debe mencionar que la información presenta un control de calidad riguroso y periodos de datos vacíos. Las estaciones a utilizar fueron (Figura \ref{fig:00_all_basins}): Ardilla (ARD), Borja (BRJ), Bella Unión (BUN), Conta (CNT), Chazuta (CZT), Huatiapa (HTP), La Tranca (LTC), Letrayoc (LTY), Puchaca (PCH), Pucallpa (PCP), Puente Ramis (RMS), Requena (RQN) y Yanapampa (YNP). La cuenca de evaluación que abarca mayor (menor) área corresponde a Pucallpa (Puchaca) con un valor de 265821.78 km$^{2}$ (730.79 km$^{2}$). Una mayor descripción de las cuencas de evaluación en función del área, caudal y precipitación se aprecia en el Anexo 2 y 3.
+Para la investigación se obtuvo información de caudales que se encuentran en la salida de flujo principal de la cuenca. Se utilizaron alrededor de 13 estaciones hidrológicas del trabajo de \citet{Aybar2019}, las cuales fueron provistas por SENAMHI y del Observatorio de Investigación HYdro-geoquímica de la Cuenca AMazónica (SO-HYBAM). La información se encuentra a escala temporal mensual en el periodo de 1980 al 2016. Se debe mencionar que la información presenta un control de calidad riguroso y periodos de datos vacíos. Las estaciones a utilizar fueron (Figura \ref{fig:00_all_basins}): Ardilla (ARD), Borja (BRJ), Bella Unión (BUN), Conta (CNT), Chazuta (CZT), Huatiapa (HTP), La Tranca (LTC), Letrayoc (LTY), Puchaca (PCH), Pucallpa (PCP), Puente Ramis (RMS), Requena (RQN) y Yanapampa (YNP). La cuenca de evaluación que abarca mayor (menor) área corresponde a Pucallpa (Puchaca) con un valor de 265821.78 km$^{2}$ (730.79 km$^{2}$). Una mayor descripción de las cuencas de evaluación en función del área, caudal y precipitación se aprecia en el Anexo 3 y 4.
 
 Se debe mencionar que no se evaluó si el caudal en estas estaciones hidrológicas siguen un régimen natural o no natural (o reguladas). Tal información esta fuera de los objetivos del estudio, sin embargo, esto puede ser discernido empíricamente si es que estas se encuentran fuera de los limites (de agua y energía) de la curva de Budyko (mayor explicación en la sección de Marco Teórico).
 
 \clearpage
 \input{FigsANDTables/ETproducts.tex}
+\thispagestyle{empty}
 \clearpage
 \input{FigsANDTables/00_all_basins.tex}
+\thispagestyle{empty}
 \clearpage
 
 \subsubsection{Esquema metodológico}
@@ -505,6 +559,8 @@ Se debe mencionar que no se evaluó si el caudal en estas estaciones hidrológic
 La investigación se inspira en los trabajos de \citet{Weerasinghe2019discuss} y \citet{Singh2015}, y se divide en tres principales pasos: 1) Selección del mejor producto de evapotranspiración actual basado en percepción remota; 2) Budyko probabilístico; y 3) Estimación de la vulnerabilidad de la disponibilidad del RH en el futuro. Una visualización esquemática de lo anterior se encuentra en la Figura \ref{fig:workflow}, donde se muestra el proceso completo para la realización de la investigación. En las secciones posteriores se detalla los pasos de la Figura \ref{fig:workflow}.
 
 \input{FigsANDTables/workflow.tex}
+
+\thispagestyle{empty}
 
 Toda la información ($P$, $T$, $PE$, $AE$ y $Q$) fue analizada y validada a escala climática, es decir a nivel de promedio anual y a escala espacial de cuenca hidrográfica. Solo la información de $PE$ (en función de $T$) se calculo a nivel diario y acumulado para obtener valores anuales, y posteriormente, sus climatologías. Los datos grillados se interpolaron (por el vecino más cercano) a una escala de 0.01$^{\circ}$ con la finalidad de facilitar su inter-comparación. El periodo climático en este estudio se establece entre los años 2003 y 2013, esto por las diferentes razones:
 
@@ -534,6 +590,8 @@ Las UH utilizadas en este estudio fueron obtenidas del Geoportal del ANA (\url{h
 
 \clearpage
 \input{FigsANDTables/00_vertientes.tex}
+
+\thispagestyle{empty}
 
 \subsubsection{Selección de producto de evapotranspiración actual}
 
@@ -676,13 +734,20 @@ Donde $VI$ es el índice de vulnerabilidad, $WA$ es la disponibilidad de agua a 
 \vspace*{0.5mm}
 \section{RESULTADOS Y DISCUSIONES}
 
+\thispagestyle{empty}
+
 Los resultados y discusiones se presentan teniendo en cuenta los objetivos específicos: i) Selección de productos globales de $AE$; ii) Aplicación del marco de Budyko probabilístico; y iii) Estimación la disponibilidad de RH e incertidumbre asociada frente al cambio climático.
 
-\subsection{Selección de producto de evapotranspiración actual}
+%\subsection{Selección de producto de evapotranspiración actual}
+\subsection{SELECCIÓN DE PRODUCTO DE EVAPOTRANSPIRACIÓN ACTUAL}
 
 En la Figura \ref{fig:02_AEproducts} se aprecia la climatología anual de $AE$ para los diferentes productos globales de la Tabla \ref{tab:ETproducts}. Como primera aproximación, se evidencio una clara diferencia entre las mismas, principalmente en la vertiente de Pacifico, donde $AE$ tiende a cambiar abruptamente (P-LSH y SSEBop). De igual manera en la vertiente del Amazonas se presenta altos contrastes, particularmente en la transición Andes-Amazonas (MODIS16, TerraClimate y SSEBop). 
 
+\thispagestyle{empty}
+
 \input{FigsANDTables/02_AEproducts.tex}
+
+\thispagestyle{empty}
 
 Para un mejor entendimiento de la similaridad entre los diferentes productos de $AE$, se hace uso de la matriz Td (Figura \ref{fig:03_Tindex_AEproducts}). La matriz Td muestra el calculo entre pares de productos de la métrica Td. Considerando esta matriz, todos los productos tiene una alta similaridad (Td $>$ 0.75), sin embargo hay algunos con mucho mas similitud entre si (próximos a 1). Entre los productos que difieren mas con el resto fueron MODIS16 y P-LSH, y particularmente entre estas mismas se tiene el valor mas bajo de similitud lo cual se evidencia al visualizar sus valores de $AE$ en la Figura \ref{fig:02_AEproducts} (principalmente en la vertiente del Titicaca y en los Andes). Caso opuesto (Td próximo a 1) se tiene a GLEAM y PROMEDIO, que se consideran como los de mayor similitud entre el resto, solo existe disparidad en la magnitud de $AE$ al norte de la vertiente Amazónica (Figura \ref{fig:02_AEproducts}). TerraClimate es también próximo a GLEAM y PROMEDIO con una medida levemente menor de similiridad, a razón de mayor discrepancia en la transición Andes-Amazonia con los anteriores productos.
 
@@ -691,6 +756,8 @@ Por lo tanto se puede afirmar que GLEAM, TerraClimate y PROMEDIO son los product
 \vspace*{.5cm}
 \input{FigsANDTables/03_Tindex_AEproducts.tex}
 
+\thispagestyle{empty}
+
 Para establecer correctamente que producto (GLEAM, MODIS16, PROMEDIO, SSEBop, TerraClimate, P-LSH) usar se hizo un ranqueo y posterior selección a través de una validación con datos de $AE$ observado inferido por balance hídrico y Budyko. Dos asunciones han sido establecidas para poder validar los productos globales de $AE$. El primero es que si no hay tendencia en el $AE$ inferido por balance hídrico en las cuencas de evaluación, entonces los promedios de $AE$ inferido puede compararse con el promedio de diferentes tiempos. La segunda asunción es que el balance hídrico puede ser simplificado a la Ecuación \ref{equ:bheq}, donde para escalas anuales a decadales, el cambio en el almacenamiento es insignificante.
 
 La primera asunción seria factible siempre y cuando no haya tendencia en $AE$. Teniendo en cuenta el contexto del cambio climático (incremento de $T$), es entonces esperado que $AE$ aumente también, sin embargo, debido a la falta de información no se tiene consenso acerca de las causas e inclusive la dirección de la tendencias en $AE$ \citep{hobbins2004trends,cong2009does,wang2011trends,miralles2016wacmos,douville2013anthropogenic,zhang2016multi}. Adicionalmente, se tiene evidencia a escala global que existe una tendencia decreciente en la evaporación, lo cual es contrario a lo esperado, este fenómeno se llama la “paradoja de la evaporación". Lo anterior hace que sea aun mas debatible entender la variabilidad espacio-temporal de $AE$. A la fecha, en Perú no existe trabajos en tendencias de $AE$, esto probable a la escasa o nula información de $AE$ observado. Debido a que la primera asunción es discutible, la validación solo se realizo en un periodo común de información (2003-2013) por lo que efectos de tendencia fueron aplacados y porque no se comparo en otros periodos temporales.
@@ -698,14 +765,16 @@ La primera asunción seria factible siempre y cuando no haya tendencia en $AE$. 
 
 Con respecto a la segunda asunción, muchos estudios establecen el cambio en el almacenamiento como nulo a escala de cuencas para periodos temporales anuales, decadales y climatológicos \citep{Budyko1961,Fu1981,Zhang2008,Wang2014,Singh2015}. El cambio en el almacenamiento de agua ha sido recientemente evaluado por \citet{rodell2018emerging} mediante el uso del Gravity Recovery and Climate Experiment (GRACE) para el periodo 2002-2016. La tendencia encontrada para el caso del Perú es menos de 1cm/año (no significativo), entonces asumiendo que existe una contribución (por almacenamiento) en las cuencas de evaluación (y en las UH) esta representaría menos del 1\% al promedio anual de $AE$. Por lo tanto, puede ser simplificado a la escala del estudio (2003-2013), y la segunda asunción es aceptable.
 
+\clearpage
 \input{FigsANDTables/04_05_curve_all_data.tex}
+\clearpage
 
 \clearpage
-Las cuencas de evaluación donde se realizo la validación fueron 13 (Anexo 2 y 3). La diversidad es buena ya que se distribuye de norte a sur en las tres principales vertientes (Pacifico, Altiplano y Amazonas) y fueron de diversos tamaño. En base a la información del Anexo 3 se realizo los cálculos para inferir $AE$ observado, y en conjunto con sus valores a escala de cuenca de los productos globales de $AE$ se hizo la validación. 
+Las cuencas de evaluación donde se realizo la validación fueron 13 (Anexo 3 y 4). La diversidad es buena ya que se distribuye de norte a sur en las tres principales vertientes (Pacifico, Altiplano y Amazonas) y fueron de diversos tamaño. En base a la información del Anexo 4 se realizo los cálculos para inferir $AE$ observado, y en conjunto con sus valores a escala de cuenca de los productos globales de $AE$ se hizo la validación. 
 
-Una primera aproximación del comportamiento de $AE$ observado y de los productos globales dentro de la curva de Budyko se aprecia en la Figura \ref{fig:04_05_curve_all_data}. Se confirma que las cuencas de evaluación se encuentran dentro de diferentes regiones climáticas ya que el índice de aridez ($PE/P$) se encuentra dentro del rango de 0 a 10 (Balance Hídrico y Budyko Determinístico en la Figura \ref{fig:04_05_curve_all_data}). El valor de $AE$ observado varia ligeramente entre el inferido por balance hídrico y Budyko determinístico, sin embargo, ambos se encuentran posicionados dentro de los limites de Budyko (a excepción de la cuenca Chazuta - CZT, que supera ligeramente el límite de energía). Con respecto a los productos globales, resaltan GLEAM, PROMEDIO y TerraClimate, donde el valor estimado de $AE$ tiende a ser cercano al observado (especialmente en cuencas con un índice de aridez menor a 3). Caso contrario se evidencio en MODIS16, SSEBop y P-LSH donde se aprecia mayor disparidad con respecto al observado. Por lo tanto, se debe mencionar que no existe alguna estimación de $AE$ (producto globales) que sea lo suficiente próximo al observado (inferido) ya que en todas las cuencas se presento un sesgo (Figura \ref{fig:04_05_curve_all_data} y Anexo 4). Existe una tendencia de sobre-estimación (sub-estimación) de $AE$ en cuencas mas (menos) áridas. Asimismo, en el producto MODIS16 y P-LSH se presenta mayor sobre-estimación (superando el límite de agua), caso contrario en SEEBop, donde se tiene la mayor sub-estimación de $AE$.
+Una primera aproximación del comportamiento de $AE$ observado y de los productos globales dentro de la curva de Budyko se aprecia en la Figura \ref{fig:04_05_curve_all_data}. Se confirma que las cuencas de evaluación se encuentran dentro de diferentes regiones climáticas ya que el índice de aridez ($PE/P$) se encuentra dentro del rango de 0 a 10 (Balance Hídrico y Budyko Determinístico en la Figura \ref{fig:04_05_curve_all_data}). El valor de $AE$ observado varia ligeramente entre el inferido por balance hídrico y Budyko determinístico, sin embargo, ambos se encuentran posicionados dentro de los limites de Budyko (a excepción de la cuenca Chazuta - CZT, que supera ligeramente el límite de energía). Con respecto a los productos globales, resaltan GLEAM, PROMEDIO y TerraClimate, donde el valor estimado de $AE$ tiende a ser cercano al observado (especialmente en cuencas con un índice de aridez menor a 3). Caso contrario se evidencio en MODIS16, SSEBop y P-LSH donde se aprecia mayor disparidad con respecto al observado. Por lo tanto, se debe mencionar que no existe alguna estimación de $AE$ (producto globales) que sea lo suficiente próximo al observado (inferido) ya que en todas las cuencas se presento un sesgo (Figura \ref{fig:04_05_curve_all_data} y Anexo 5). Existe una tendencia de sobre-estimación (sub-estimación) de $AE$ en cuencas mas (menos) áridas. Asimismo, en el producto MODIS16 y P-LSH se presenta mayor sobre-estimación (superando el límite de agua), caso contrario en SEEBop, donde se tiene la mayor sub-estimación de $AE$.
 
-A modo de resumen, la Tabla \ref{tab:Table_r_rmse_bias} muestra la eficiencia de los productos $AE$ en función de las métricas: correlación de Spearman (Rs), error cuadrático medio (RMSE) y el error simple (bias). Se aprecia que los productos de $AE$ global tiene alta relación con el $AE$ observado inferido (Rs $>$ 0.7), destacando principalmente GLEAM, PROMEDIO, TerraClimate y MODIS16. Por otro lado, RMSE es muy variado para cada uno de los productos, se encontró mayor error por parte de SSEBop seguido por P-LSH. Los errores de SSEBop son debidos a la sub-estimación (bias negativo) por parte del producto global. Lo anterior, contrario para P-LSH, donde el bias es positivo. GLEAM destaca por tener los menores errores tanto bias como en RSME. Una inspección al bias considerando cada cuenca y producto global (Anexo 4) aclara lo anterior mencionado. MODIS16 y P-LSH (SEEBop) sobrestiman (subestiman) en prácticamente todas las cuencas de evaluación. PROMEDIO y TerraClimate tienden a subestimar ligeramente. Solo GLEAM presento menos y próximos a 0 de bias en ciertas cuencas de evaluación. Esto en concordancia con lo caracterizado en la curva de Budyko de la Figura \ref{fig:04_05_curve_all_data}.
+A modo de resumen, la Tabla \ref{tab:Table_r_rmse_bias} muestra la eficiencia de los productos $AE$ en función de las métricas: correlación de Spearman (Rs), error cuadrático medio (RMSE) y el error simple (bias). Se aprecia que los productos de $AE$ global tiene alta relación con el $AE$ observado inferido (Rs $>$ 0.7), destacando principalmente GLEAM, PROMEDIO, TerraClimate y MODIS16. Por otro lado, RMSE es muy variado para cada uno de los productos, se encontró mayor error por parte de SSEBop seguido por P-LSH. Los errores de SSEBop son debidos a la sub-estimación (bias negativo) por parte del producto global. Lo anterior, contrario para P-LSH, donde el bias es positivo. GLEAM destaca por tener los menores errores tanto bias como en RSME. Una inspección al bias considerando cada cuenca y producto global (Anexo 5) aclara lo anterior mencionado. MODIS16 y P-LSH (SEEBop) sobrestiman (subestiman) en prácticamente todas las cuencas de evaluación. PROMEDIO y TerraClimate tienden a subestimar ligeramente. Solo GLEAM presento menos y próximos a 0 de bias en ciertas cuencas de evaluación. Esto en concordancia con lo caracterizado en la curva de Budyko de la Figura \ref{fig:04_05_curve_all_data}.
 
 \input{FigsANDTables/Table_r_rmse_bias.tex}
 
@@ -713,23 +782,30 @@ Para el ranqueo de los productos globales de $AE$ se ordeno de mayor a menor (ef
 
 \input{FigsANDTables/Table_rank.tex}
 
+\thispagestyle{empty}
+
 Es evidente de la Tabla \ref{tab:Table_rank} que los mejores productos fueron GLEAM, PROMEDIO y TerraClimate y los menos eficientes SSEBop y P-LSH. Esto en concordancia con los resultados anteriormente discutidos. Sin embargo, este ranqueo solo esta basado en las métricas que caracteriza la magnitud de $AE$, mas no su resolución espacial y su capacidad de estimar $AE$ en tipos de cobertura de suelo específicos tales como: cuerpos agua, bosques y/o áreas irrigadas. El reciente trabajo de \citet{Weerasinghe2019discuss} considera que este tipo de validación es pertinente, sin embargo no hay forma objetiva de hacer una clasificación por tipo de suelo, considerando que existe una diversidad de formas. Si tomamos en cuenta la resolución espacial de cada producto es evidente que GLEAM seria el mas afectado ya que es el producto con menor resolución (0.25$^{\circ}$). Esto no modificaría el orden que se le dio a GLEAM inicialmente, pero acercaría mas el resto de productos a una puntuación mas baja (mayor eficiencia). Los otros productos con aceptable eficiencia y mayor resolución que GLEAM son PROMEDIO y TerraClimate. Considerando el tamaño de cuenca hidrográfica (UH) a usar para el análisis de la vulnerabilidad de los RH (ANA), estos serian mas aceptables. En consecuencia, el producto a destacar es PROMEDIO ya que es el promedio del resto de productos de $AE$ los cuales son estimaciones independientes (cada producto tiene diferentes parametrizaciones y datos de entrada), entonces PROMEDIO es la representación promedio de los "ensembles" de $AE$. A diferencia de usar un solo producto, es mas representativo usar el promedio ya que ningún producto sera completamente eficiente en todo el territorio. Una similar idea es dado por \citet{zhang2016review}, y ejemplificado por \citet{da2019spatial} donde se produce un producto de $AE$ para la cuenca Amazónica como el promedio de diversos producto globales de $AE$.
 
 Por consiguiente, GLEAM, PROMEDIO y TerraClimate son los mejores productos de $AE$ ya que representan con menor error los valores inferidos de $AE$. Cada uno de estos tiene una resolución espacial y temporal especifica. Su selección debe estar basado en el tipo de pregunta científica a responder. Para esta investigación y para los posteriores análisis se establece a PROMEDIO como el referente de $AE$.
 
-\subsection{Budyko probabilístico}
+\thispagestyle{empty}
 
-Seleccionado $AE$ y $P$ (de PISCOp 2.1), solo es requerido $PE$ para la aplicación del Budyko probabilístico. $PE$ se obtuvo a partir de $Tx$ y $Tn$ (de PISCOt 1.1) usando la ecuación de \citet{Hargreaves1985}. Los $PE$ anuales se muestran en el Anexo 5. Una vez las tres variables ($AE$, $PE$ y $P$) establecidos se procedió a la extracción de sus valores climáticos a escala de UH. Los valores del índice de evaporación ($AE/P$) y aridez ($PE/P$) por cada UH se observan en el Anexo 6. 
+%\subsection{Budyko probabilístico}
+\subsection{BUDYKO PROBABILÍSTICO}
+
+Seleccionado $AE$ y $P$ (de PISCOp 2.1), solo es requerido $PE$ para la aplicación del Budyko probabilístico. $PE$ se obtuvo a partir de $Tx$ y $Tn$ (de PISCOt 1.1) usando la ecuación de \citet{Hargreaves1985}. Los $PE$ anuales se muestran en el Anexo 6. Una vez las tres variables ($AE$, $PE$ y $P$) establecidos se procedió a la extracción de sus valores climáticos a escala de UH. Los valores del índice de evaporación ($AE/P$) y aridez ($PE/P$) por cada UH se observan en el Anexo 7. 
 
 El índice de evaporación presenta una variabilidad espacial menos coherente que el índice de aridez. En general $AE/P$ tiende a tener valores mayores a 1 en las UH cercanas a la franja costera y en algunas ubicadas en la vertiente del Amazonas. $PE/P$ varia de mayor a menor de oeste a este, respectivamente. Similar a $AE/P$, los valores mayores a 10 se encuentran prácticamente en la costa para ir disminuyendo mientras se desplaza a la vertiente del Amazonas, donde prácticamente tiene como valor de $\approx$2 en todo su contorno. Debido a que la ecuación de Budyko es solo aceptable bajo las leyes de suministro de agua atmosférica ($AE < P$) y de demanda (energía, $AE < PE$), aquellas UH que no cumplieron fueron removidas del análisis (Figura \ref{fig:06_Ai_Ei_Omega_spatial}). Por esta remoción quedaron en total 18, 76 y 16 para la vertiente del Pacífico, Amazonas y Titicaca, respectivamente.
 
 Una posible explicación de la mayor remoción de UH en la vertiente del Pacifico, es a causa del bajo valor (sub-estimación) de $P$ o excesivo valor (sobre-estimación) de $AE$ ya que sobrepasan el limite de agua (si $P$ tiende a 0, o $AE$ tiende a ser muy alto, $AE/P$ seria excesivamente alto). Esto puede ser debido a errores introducidos por el producto PISCOp 2.1 o por la estimación de $AE$ por satélite. Teniendo en cuenta lo anterior, es mas adecuado asumir que el error proviene de $AE$ que de $P$, ya que este ultimo fue construido a partir de información observada de estaciones climatológicas \citep{Aybar2019}. Asimismo, es aceptable inferir que tal situación de $AE > P$ puede ser real, condiciones en que $AE$ es impulsado por otras fuentes de agua que $P$ puede darse porque el cambio en el almacenamiento no puede ser simplificado, agua adicional debido a intervenciones humanas (irrigación), entre otras (ver Marco Teórico).
-  
+ 
+\clearpage
 \input{FigsANDTables/06_Ai_Ei_Omega_spatial.tex}
+\clearpage
 
 Aunque se menciono que el cambio en el almacenamiento a escala climática (2003-2013) es despreciable, una reciente investigación demostró que cuencas áridas/semi-áridas requieren un periodo temporal mas largo para llegar a ser de condiciones estable que cuencas húmedas/sub-húmedas \citep{hanassessing}. El desequilibrio en los cálculos del balance hídrico de la cuenca (resultante del supuesto de estado estable) aumenta a medida que disminuye la escala de tiempo utilizada para el cálculo del balance hídrico. \citet{hanassessing} concluye que para estimar $AE$, un período típico de 5 a 10 años limitaría el error dentro de 10\% para la mayoría de las cuencas. Sin embargo, para estimar $Q$, un período de 10 años (aun) sería suficiente para cuencas de regiones húmedas y sub-húmedas (con un error inferior al 10\%), pero es demasiado corto para las cuencas en regiones más áridas. Lo anterior explicaria porque la mayoría de UH del Pacífico son removidas del análisis. Requiriéndose posiblemente una mayor cantidad de datos (periodo mas largo de datos) o utilizar otros enfoques de Budyko.
 
-Posibles soluciones a esta limitación de Budyko (es decir para condiciones de estado no estable) se han presentando en la literatura \citep{greve2016two,moussa2016budyko,fathi2019new,mianabadi2020budyko}. Una viable y adecuada opción para las UH removidas seria aplicar el procedimiento de \citet{greve2016two}, quienes a partir de la Ecuación \ref{equ:fuEqu} \citep{Fu1981,Zhang2004} derivaron una nueva formulación de Budyko con dos parámetros para condiciones de estado no estable. \citet{greve2016two} modificaron analíticamente la ecuación de Fu utilizando suposiciones fenomenológicas básicas (similar a \citet{Zhang2004}), y proporcionaron la siguiente ecuación:
+Posibles soluciones a esta limitación de Budyko (es decir para condiciones de estado no estable) se han presentando en la literatura \citep{greve2016two,moussa2016budyko,fathi2019new,mianabadi2020budyko}. Una viable y adecuada opción para las UH removidas seria aplicar el procedimiento de \citet{greve2016two}, quienes a partir de la Ecuación \ref{equ:fuEqu} \citep{Fu1981,Zhang2004} derivaron una nueva formulación de Budyko con dos parámetros para condiciones de estado no estable. \citet{greve2016two} modificaron analíticamente la ecuación de Fu utilizando suposiciones fenomenológicas básicas \citep[similar a][]{Zhang2004}, y proporcionaron la siguiente ecuación:
 
 \begin{equation}
     \frac{AE}{P} = 1 + \frac{PE}{P} + \left ( 1 + \left ( 1 - y_{0} \right )^{k-1} \left (\frac{PE}{P}  \right )^{k} \right )^{\frac{1}{k}}
@@ -739,6 +815,7 @@ Posibles soluciones a esta limitación de Budyko (es decir para condiciones de e
 Donde, $k$, similar a $\omega$, es el parámetro que engloba las características de la cuenca. El nuevo parámetro ($y_{0}$) representa la nueva condición límite y tiene una interpretación física relacionada con el suministro de agua adicional para la evapotranspiración actual. Si $k=2.6$ y $y_{0}=0$, la Ecuación \ref{equ:Greve2016} correspondería a la formulación original de Budyko (Ecuación \ref{equ:fuEqu}). Este planteamiento fue aplicado a escala mensual y evidencio buenas estimaciones de $AE/P$ \citep{greve2016two}. La utilización de este enfoque es prometedora para la región de estudio (principalmente en la vertiente del Pacífico), sin embargo, su aplicación esta fuera de los alcances de la presente investigación. 
 
 \input{FigsANDTables/07_Curve_and_omega.tex}
+\thispagestyle{empty}
 
 La ubicación de las UH no removidas en la curva de Budyko se muestra en la Figura \ref{fig:07_Curve_and_omega}. Es muy fácil determinar la distinción de las UH por vertiente hidrográfica en la curva de Budyko. El parámetro $\omega$ calibrado de Budyko oscila en el rango de 1.5 a 5.5 (Figura \ref{fig:06_Ai_Ei_Omega_spatial} y \ref{fig:07_Curve_and_omega}), presentándose los valores mas altos en la vertiente del Amazonas que en el Pacifico y Titicaca. Tomando en cuenta el valor teórico de $\omega = 2.6$ \citep{Fu1981}, solo en las UH de la vertiente del Amazonas, el $\omega$ calibrado se encuentra próximo (Figura \ref{fig:07_Curve_and_omega}). La agrupación de $\omega$ por vertiente hidrográfica es la representación de la distribución empírica de la misma. Entonces la distribución regional de $\omega$ es usada para poder estimar $AE/P$ en cada UH y obtener la incertidumbre asociada.
 \clearpage
@@ -746,12 +823,16 @@ Después de obtener la distribución regional de $\omega$ (Figura \ref{fig:07_Cu
 
 \input{FigsANDTables/09_proBK_val.tex}
 
-El bias porcentual de la mediana estimada en la validación cruzada oscila entre -1.2\% a 2.8\% del valor observado (Tabla \ref{tab:Table_pbias}). Asimismo, los valores regionales de $PE/P$ se encuentran dentro del rango 5\% y 95\% de estimación (Figura \ref{fig:09_proBK_val}). Una inspección mas a detalle del bias porcentual a escala de UH (Anexo 7) demuestra también el bajo error que oscila entre $\pm8.72\%$ (en promedio absoluto). Solo las UH ubicadas al sur del Perú muestran un error mínimo de -39\% (como valor máximo llega hasta 19\%). Se debe tener en cuenta que los valores son razones ($AE/P$), por lo que un error de ese rango es relativamente mínimo. Adicionalmente, esto es tomado en cuenta al tener la medida de incertidumbre en cada escala de análisis.
+\thispagestyle{empty}
+
+El bias porcentual de la mediana estimada en la validación cruzada oscila entre -1.2\% a 2.8\% del valor observado (Tabla \ref{tab:Table_pbias}). Asimismo, los valores regionales de $PE/P$ se encuentran dentro del rango 5\% y 95\% de estimación (Figura \ref{fig:09_proBK_val}). Una inspección mas a detalle del bias porcentual a escala de UH (Anexo 8) demuestra también el bajo error que oscila entre $\pm8.72\%$ (en promedio absoluto). Solo las UH ubicadas al sur del Perú muestran un error mínimo de -39\% (como valor máximo llega hasta 19\%). Se debe tener en cuenta que los valores son razones ($AE/P$), por lo que un error de ese rango es relativamente mínimo. Adicionalmente, esto es tomado en cuenta al tener la medida de incertidumbre en cada escala de análisis.
 
 \input{FigsANDTables/Table_pbias.tex}
 
+\thispagestyle{empty}
 
-\subsection{Disponibilidad de los recursos hídricos debido al cambio climático}
+\subsection{DISPONIBILIDAD DE LOS RECURSOS HÍDRICOS DEBIDO AL CAMBIO CLIMÁTICO}
+%\subsection{Disponibilidad de los recursos hídricos debido al cambio climático}
 
 Se estimo la vulnerabilidad de los RH al cambio climático para un rango de posibles escenarios (100 de $PE$ por 100 de $P$) a escala de Perú, vertiente hidrográfica y de UH. De acuerdo al reporte de la IPCC, en América del Sur existe alta probabilidad de cambio de 1.5$^{\circ}$C a 8$^{\circ}$C y de -40\% a 40\%, para temperatura y precipitación respectivamente
 \citep{stocker2013climate}. Esto en concordancia con las diferentes investigaciones en Perú, donde el aumento de temperatura es prácticamente un hecho \citep{vuille2015impact,rosas2016towards,lopez2016recent,vicente2018recent,hunziker2018effects} y el cambio en precipitación presenta mayor incertidumbre en su dirección y variabilidad espacial \citep{zubieta2017spatial,de2017can,Aybar2019,Huerta2019a}. Por lo tanto, para esta investigación los espacios climáticos hipotéticos se definen de la siguiente manera:
@@ -767,9 +848,13 @@ Se estimo la vulnerabilidad de los RH al cambio climático para un rango de posi
 
 A escala de Perú, el índice de vulnerabilidad estimado ($VI$) y su incertidumbre asociada se presenta en la Figura \ref{fig:12_VI_PERU_scale}. Como era de esperarse, cambios negativos (positivos) de $P$ ($PE$) genero un aumento (disminución) de la vulnerabilidad. Así como también, cambios en $P$ tuvieron un rol mayor que los cambios de $PE$ (en función de $T$), esto en linea con otros trabajos \citep{Singh2015,zhang2018bottom}. La incertidumbre (debido al parámetro $\omega$) es mucho menor en los escenarios de aumento de vulnerabilidad que en los de disminución, como resultado de un escenario mas realista, y de acuerdo con otros estudios \citep{singh2011trading,Singh2015,zhang2018bottom}.
 
+\thispagestyle{empty}
+
 Una comparación con trabajos locales y regionales relacionados a la temática de cambio climático y recursos hídricos (pero con un enfoque arriba-abajo) muestran altas similitudes. Por ejemplo, las investigaciones descritas en la sección de Introducción \citep{Pouyaud2005,Juen2007,LavadoCasimiro2011,Andres2014,VanSoesbergen2016,Olsson2017,Pilares2018} concluyen de manera general que se proyecta un aumento de la disponibilidad hídrica (mayor caudal) con respecto al periodo histórico. Este resultado es también obtenido en la Figura \ref{fig:12_VI_PERU_scale}, donde $VI$ tiende a ser negativo para un escenario de aumento de $PE$ y no cambio de $P$, lo que significaría que existe mayor disponibilidad de agua. Los espacios climáticos obtenidos a partir de la salidas de modelos de circulación general (GCMs) muestran similares escenarios en la región de estudio \citep{stocker2013climate}. 
 
 \input{FigsANDTables/12_VI_Nivel_scale_Amazon.tex}
+
+\thispagestyle{empty}
 
 A escala de vertiente hidrográfica, resultados similares a la Figura \ref{fig:12_VI_PERU_scale} se muestra en las Figuras \ref{fig:12_VI_Nivel_scale_Amazon}, \ref{fig:12_VI_Nivel_scale_Pacific} y \ref{fig:12_VI_Nivel_scale_Titicaca} para la vertiente del Amazonas, Pacifico y Titicaca, respectivamente. Se demuestra una vez mas la mayor influencia de $P$ para determinar la vulnerabilidad. Adicionalmente se evidencio que para un aumento de $VI$ en la vertiente del Amazonas se requiere un menor cambio de $P$ y $PE$, en comparación con el Pacífico y Titicaca (Figura \ref{fig:12_VI_Nivel_scale_Amazon}). Esto hace entender que la vertiente Amazónica es mas susceptible al cambio climático (derivado a partir de los espacios climáticos hipotéticos). Aunque la vertiente del Pacificó y Titicaca tuvieron un similar comportamiento de $VI$ en los espacios climáticos, la incertidumbre (vista como desviación estándar) es completamente diferente. Existe mayor incertidumbre (valores mas altos) en la vertiente del Pacífico, probablemente debido a la falta de muestra para construir la distribución de probabilidad empírica en esta región, es decir, menos cantidad de UH (Figuras \ref{fig:06_Ai_Ei_Omega_spatial}, \ref{fig:07_Curve_and_omega} y \ref{fig:12_VI_Nivel_scale_Pacific}). 
 
@@ -777,32 +862,38 @@ A escala de vertiente hidrográfica, resultados similares a la Figura \ref{fig:1
 \vspace*{.5cm}
 \input{FigsANDTables/12_VI_Nivel_scale_Titicaca.tex}
 
+\thispagestyle{empty}
+
 Para mayor detalle del análisis, se realizo el mismo procedimiento pero a escala de UH. El proceso puede ser entendido de la siguiente manera. En cada UH se tiene una matriz similar al de la Figura \ref{fig:12_VI_PERU_scale}, la cual se construyo en base a la distribución regional de $\omega$, perteneciente a una determinada vertiente. Entonces, es posible identificar umbrales críticos para un especifico valor de vulnerabilidad (y también para cambios en $PE$ y $P$) para cada UH y así poder visualizarlo en el espacio. 
 
 A manera de ejemplo, la Figura \ref{fig:13_14figs} representa el $VI$ para cada UH cuando se tiene cambios de $P$ y $PE$ en un -20\% y 20\% respectivamente. Se evidencia un aumento critico de vulnerabilidad de hasta 50\% en UH ubicadas principalmente en toda la longitud de los Andes (cabeceras de cuenca), pero principalmente al sur-oeste (vertiente del Pacifico y Titicaca) y sur-este (vertiente del Amazonas) del Perú. La incertidumbre asociada para estas UH se encuentra dentro de una variación de 10-20\%. Otros escenarios pueden ser fácilmente acoplados, por ejemplo, para un cambio de $PE$ en 20\% y un $VI$ de 25\%, el cambio critico de $P$ es prácticamente bajo en las UH de los Andes, principalmente las ubicadas al sur. Sin embargo, estos valores tiene una incertidumbre ligeramente mayor que el escenario anterior. Por lo tanto, un descubrimiento de esta investigación es que las UH ubicadas en las partes altas de los Andes (principalmente al sur de Perú) son los mas vulnerables lo que conduciría a aun aumento de su vulnerabilidad en el futuro. Las UH mas vulnerables para el caso de la Figura \ref{fig:13_14figs}a ($VI > 50\%$ e incertidumbre entre $10-20\%$) y \ref{fig:13_14figs}b ($\Delta P < 0\%$ e incertidumbre entre $10-30\%$): \textbf{Apurimac}, Camana, Carhuapanas, \textbf{Coata}, Crisnejas, (Alto) \textbf{Huallaga}, \textbf{Ilave}, \textbf{Ilpa}, \textbf{Inambari}, Mala, \textbf{Mantaro}, \textbf{Mauri}, Marañon, Pampas, Parananpura, \textbf{Perené}, \textbf{Pucara}, Tampobata y Urubamba (en negrita donde hubo coincidencia de ambos casos).
 
 Aunque una disminución de -20\% en $P$ pueda ser exagerado, \citet{lausier2018overlooked} encuentra que existe tendencias decrecientes en la cola inferior y superior (de la distribución) que no necesariamente son consistentes con las de la media y mediana. Por lo tanto, previos trabajos pueden tener cierto grado de incertidumbre ya que solo se basan en la tendencia promedio de $P$. Para el caso de Perú, \citet{lausier2018overlooked} demuestra que existe concordancia en las tendencias de cola en un rango de -30mm a -50mm para el periodo 1950-2011, particularmente para el sur del Perú. Por consiguiente, escenarios como los planteados en esta tesis ya sean probablemente reales.
 
-\input{FigsANDTables/13_14figs.tex}
-
 \clearpage
+\thispagestyle{empty}
+\input{FigsANDTables/13_14figs.tex}
+\clearpage
+
 \vspace*{0.5mm}
 \section{CONCLUSIONES}
+
+\thispagestyle{empty}
 
 Las conclusiones serán abordadas según los objetivos específicos planteados:
 
 \begin{itemize}
-    \item \textbf{De selección de productos globales de evapotranspiración actual basada en percepción remota:} Se evaluó seis (mas el promedio de todos) productos evapotranspiración actual en conjunto con datos observados inferidos por balance hídrico y Budyko. La eficiencia de los productos en orden de mayor a menor fueron: GLEAM, PROMEDIO, TerraClimate, MODIS16, SSEBop y P-LSH. Se recomienda el uso de los primeros productos (GLEAM, PROMEDIO, TerraClimate) de acuerdo al tipo de pregunta científica a responder debido a que cada uno de estos presenta una resolución espacial y temporal especifica. Para este trabajo de investigación se utilizo PROMEDIO (promedio los productos) debido a su resolución espacial (menos gruesa que GLEAM) y para minimizar los errores (valores máximos y mínimos).
+    \item \textbf{De la selección de productos globales de evapotranspiración actual basada en percepción remota:} Se evaluó seis (mas el promedio de todos) productos de evapotranspiración actual en conjunto con datos observados inferidos por balance hídrico y Budyko. Los resultados demostraron que la eficiencia de los productos, de acuerdo a las métricas utilizadas (R, RMSE y bias), en orden de mayor a menor fueron: GLEAM, PROMEDIO, TerraClimate, MODIS16, SSEBop y P-LSH. Por lo tanto, se destaca la utilización de los mejores productos (GLEAM, PROMEDIO, TerraClimate) de acuerdo al tipo de pregunta científica a responder debido a que cada uno de estos presenta una resolución espacial y temporal especifica. Para este estudio de investigación se utilizó PROMEDIO (promedio los productos) debido a su resolución espacial (menos gruesa que GLEAM) y para minimizar los errores (valores máximos y mínimos).
    
     \item \textbf{De la aplicación del Budyko probabilístico:}
-    Se demostró la eficiencia del Budyko probabilístico, no solo para estimar el índice de evaporación con un error mínimo aceptable, si no también para caracterizar la hidro-climatología a escala de cuenca, vertiente hidrográfica ($\pm$2\%) y nacional ($\pm$9\%). Esto principalmente para las vertientes del Amazonas y Titicaca. Se evidencio que enfoques deterministas de Budyko no necesariamente se ajustan a la realidad ($\omega = 2.6$).
+    Se demostró la eficiencia del Budyko probabilístico, no solo para estimar el índice de evaporación con un error mínimo aceptable, si no también para caracterizar la hidro-climatología a escala de cuenca, vertiente hidrográfica ($\pm$2\%) y nacional ($\pm$9\%). Esto principalmente para las vertientes del Amazonas y Titicaca. Se evidenció que enfoques deterministas de Budyko no necesariamente se ajustan a la realidad ($\omega = 2.6$).
     
-    \item \textbf{De la estimación de la disponibilidad de los recursos hídricos e incertidumbre asociada frente al cambio climático:} El enfoque abajo-arriba demostró ser de gran utilidad para poder estimar la vulnerabilidad de los recursos hídricos e incertidumbre asociada, sin necesidad de hacer uso de salidas de modelos globales de cambio climático. Asimismo, permitió establecer diferentes umbrales de cambio en base a precipitación, evapotranspiración potencial (en función de la temperatura) y vulnerabilidad. La utilización de un umbral especifico sera de acuerdo al punto de vista del tomador de decisión. De acuerdo a la escala espacial de análisis:
+    \item \textbf{De la estimación de la disponibilidad de los recursos hídricos e incertidumbre asociada frente al cambio climático:} El enfoque abajo-arriba demostró ser de gran utilidad para poder estimar la vulnerabilidad de los recursos hídricos e incertidumbre asociada, sin necesidad de hacer uso de salidas de modelos globales de cambio climático. Asimismo, permitió establecer diferentes umbrales de cambio en base a precipitación, evapotranspiración potencial (en función de la temperatura) y vulnerabilidad. La utilización de un umbral especifico será de acuerdo al punto de vista del que toma la decisión. De acuerdo a la escala espacial de análisis:
     
     \begin{itemize}
-        \item A escala nacional: Se evidencio un aumento de la vulnerabilidad a cambios (negativos) en precipitación y (positivos) evapotranspiración potencial. La incertidumbre es mucho menor en los escenarios de aumento de vulnerabilidad que en los de disminución, como resultado de un escenario mas realista. Asimismo los cambios en precipitación toman un rol mas importante que los cambios en evapotranspiración potencial. 
-        \item A escala de vertiente hidrográfica: Similares conclusiones como en escala nacional. Adicionalmente, se evidencia que la vertiente del Amazonas es mas susceptible al cambio climático (espacios climáticos hipotéticos) ya que requiere menos cambio en precipitación y evapotranspiración potencial para pasar de una vulnerabilidad negativa (aumento de disponibilidad hídrica) a positiva (disminución de disponibilidad hídrica), comparado con las vertientes del Pacifico y Titicaca.
-        \item A escala de unidad hidrográfica: Considerándose un cambio mínimo de precipitación (menor a 10\%), se espera una mayor vulnerabilidad (25\%) para las cuencas ubicadas en la parte central y sur de los Andes que pertenecen a la vertiente del Amazonas (\textbf{Inambari}, \textbf{Huallaga (Alto)}, \textbf{Perené}, \textbf{Mantaro} y \textbf{Apurímac (Alto)}) y Titicaca (\textbf{Mauri}, \textbf{Ilave}, \textbf{Ilpa}, \textbf{Coata} y \textbf{Pucará}), principalmente. Es necesario priorizar estas áreas para eventuales estudios de desarrollo sostenible ante el cambio climático.
+        \item A escala nacional: Se evidenció un aumento de la vulnerabilidad a cambios (negativos) en precipitación y (positivos) evapotranspiración potencial. La incertidumbre es mucho menor en los escenarios de aumento de vulnerabilidad que en los de disminución, como resultado de un escenario mas realista. Asimismo, los cambios en precipitación toman un rol mas importante que los cambios en evapotranspiración potencial. 
+        \item A escala de vertiente hidrográfica: Similares conclusiones como en escala nacional. Adicionalmente, se evidencia que la vertiente del Amazonas es mas susceptible al cambio climático (espacios climáticos hipotéticos) ya que requiere menos cambio en precipitación y evapotranspiración potencial para pasar de una vulnerabilidad negativa (aumento de disponibilidad hídrica) a positiva (disminución de disponibilidad hídrica), comparado con las vertientes del Pacífico y Titicaca.
+        \item A escala de unidad hidrográfica: Considerándose un cambio mínimo de precipitación (menor a 10\%), se espera una mayor vulnerabilidad (25\%) para las cuencas ubicadas en la parte central y sur de los Andes que pertenecen a la vertiente del Amazonas en \textbf{Inambari}, \textbf{Huallaga (Alto)}, \textbf{Perené}, \textbf{Mantaro} y \textbf{Apurímac (Alto)}; y para el Titicaca en \textbf{Mauri}, \textbf{Ilave}, \textbf{Ilpa}, \textbf{Coata} y \textbf{Pucará}.
     \end{itemize}
     
 \end{itemize}
@@ -812,11 +903,15 @@ Las conclusiones serán abordadas según los objetivos específicos planteados:
 \vspace*{0.5mm}
 \section{RECOMENDACIONES}
 
+\thispagestyle{empty}
+
 Los resultados obtenidos en la presente tesis proponen nuevas perspectivas de investigación y recomendaciones que se detallan a continuación:
 
 \begin{itemize}
 
-    \item Se hace un llamado en implementar los enfoques probabilísticos de Budyko en estudios de hidro-climatología.
+    \item Es necesario priorizar las áreas consideradas vulnerables para eventuales estudios de desarrollo sostenible ante el cambio climático.
+
+    \item Implementar enfoques probabilísticos de Budyko en estudios de hidro-climatología.
     
     \item Hacer uso de una mayor cantidad de productos de evapotranspiración actual, no solo provenientes de información satelital y/o reanálisis, si no de modelos. De igual manera, adicionar otras bases de datos de precipitación y temperatura, así como también otros métodos de estimación de evapotranspiración potencial.
     
@@ -832,6 +927,9 @@ Los resultados obtenidos en la presente tesis proponen nuevas perspectivas de in
 \clearpage
 \vspace*{0.5mm}
 \section{REFERENCIAS BIBLIOGRÁFICAS}
+
+\thispagestyle{empty}
+
 \bibliographystyle{References/apalikeADR}
 \bibliography{References/ref}
 
@@ -841,52 +939,72 @@ Los resultados obtenidos en la presente tesis proponen nuevas perspectivas de in
 %\newgeometry{left=30mm, right=25mm, bottom =25mm, top=50mm}
 \section{ANEXOS}
 
+\thispagestyle{empty}
 \centering
 
-\appendices{\hspace{0.6cm}Anexo 1 \hspace{0.1cm} Información de productos de AE.} 
-\Large{\textbf {Anexo 1: Información de productos de AE.}}
+\appendices{\hspace{0.6cm}Anexo 1 \hspace{0.1cm} Implementación de la investigación en python.} 
+\normalsize{\textbf {Anexo 1: Implementación de la investigación en python.}}\\
+\vspace*{2cm}
+Los códigos realizados (scripts) en python para esta tesis se pueden acceder en:\\
+\url{https://github.com/adrHuerta/prob_Budyko}
+
+\clearpage
+\appendices{\hspace{0.6cm}Anexo 2 \hspace{0.1cm} Información de productos de AE.} 
+\normalsize{\textbf {Anexo 2: Información de productos de AE.}}
 \vspace*{2cm}
 \input{FigsANDTables/Table_AE_products_source.tex}
 
 \clearpage
-\appendices{\hspace{0.6cm}Anexo 2 \hspace{0.1cm} Series de tiempo de caudal.} 
-\Large{\textbf {Anexo 2: Series de tiempo de cuencas de evaluación.}}
+\appendices{\hspace{0.6cm}Anexo 3 \hspace{0.1cm} Series de tiempo de caudal.} 
+\normalsize{\textbf {Anexo 3: Series de tiempo de cuencas de evaluación.}}
 \vspace*{2.5cm}
 \input{FigsANDTables/00_q_basins.tex}
 
+\thispagestyle{empty}
+
 \clearpage
-\appendices{\hspace{0.6cm}Anexo 3 \hspace{0.1cm} Cuencas de evaluación.} 
-\Large{\textbf {Anexo 3: Características de cuencas de evaluación.}}
+\appendices{\hspace{0.6cm}Anexo 4 \hspace{0.1cm} Cuencas de evaluación.} 
+\normalsize{\textbf {Anexo 4: Características de cuencas de evaluación.}}
 \vspace*{4cm}
 \input{FigsANDTables/Table_q_area_basin.tex}
 
-\clearpage
-\appendices{\hspace{0.6cm}Anexo 4 \hspace{0.1cm} bias en función de cuenca de evaluación y producto global.} 
+\thispagestyle{empty}
 
-\Large{\textbf {Anexo 4: bias en función de cuenca de evaluación y producto global.}}
+\clearpage
+\appendices{\hspace{0.6cm}Anexo 5 \hspace{0.1cm} bias en función de cuenca de evaluación y producto global.} 
+
+\normalsize{\textbf {Anexo 5: bias en función de cuenca de evaluación y producto global.}}
 \vspace*{3.5cm}
 
 \input{FigsANDTables/04_BIAS_by_basin.tex}
 
-\clearpage
-\appendices{\hspace{0.6cm}Anexo 5 \hspace{0.1cm} Calculo de la evapotranspiración potencial.} 
+\thispagestyle{empty}
 
-\Large{\textbf {Anexo 5: Calculo de la evapotranspiración potencial.}}
+\clearpage
+\appendices{\hspace{0.6cm}Anexo 6 \hspace{0.1cm} Calculo de la evapotranspiración potencial.} 
+
+\normalsize{\textbf {Anexo 6: Calculo de la evapotranspiración potencial.}}
 \vspace*{1.5cm}
 
 \input{FigsANDTables/01_PET_from_PISCOt.tex}
 
-\clearpage
-\appendices{\hspace{0.6cm}Anexo 6 \hspace{0.1cm} Índice de evaporación y de aridez a escala de UH.} 
+\thispagestyle{empty}
 
-\Large{\textbf {Anexo 6: Índice de evaporación y de aridez a escala de UH.}}
+\clearpage
+\appendices{\hspace{0.6cm}Anexo 7 \hspace{0.1cm} Índice de evaporación y de aridez a escala de UH.} 
+
+\normalsize{\textbf {Anexo 7: Índice de evaporación y de aridez a escala de UH.}}
 \vspace*{1.5cm}
 \input{FigsANDTables/05_Ai_Ei_spatial.tex}
 
+\thispagestyle{empty}
+
 \clearpage
-\appendices{\hspace{0.6cm}Anexo 7 \hspace{0.1cm} Bias porcentual del Budyko calibrado por cada UH.} 
-\Large{\textbf {Anexo 7: Bias porcentual del Budyko calibrado por cada UH.}}
+\appendices{\hspace{0.6cm}Anexo 8 \hspace{0.1cm} Bias porcentual del Budyko calibrado por cada UH.} 
+\normalsize{\textbf {Anexo 8: Bias porcentual del Budyko calibrado por cada UH.}}
 \vspace*{2.5cm}
 \input{FigsANDTables/10_proBK_basin_by_nivel.tex}
+
+\thispagestyle{empty}
 
 \end{document}
