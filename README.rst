@@ -38,6 +38,6 @@ La idea de esta plantilla o *template* es para facilitar la vida de los *tesista
 
 Referencias
 ------------
-1. Singh, R., and Kumar, R. (2015). Vulnerability of water availability in India due to climate change: A bottom‐up probabilistic Budyko analysis. Geophysical Research Letters, 42(22), 9799-9807.
+1. Huerta , A. (2020). Vulnerabilidad de la disponibilidad de los recursos hídricos en el Perú frente al cambio climático: análisis probabilístico de" Budyko". Universidad Nacional Agraria La Molina. http://repositorio.lamolina.edu.pe/handle/UNALM/4503
 
-2. Weerasinghe, I., van Griensven, A., Bastiaanssen, W., Mul, M., and Jia, L. (2020). Can we trust remote sensing ET products over Africa?, Hydrol. Earth Syst. Sci., https://doi.org/10.5194/hess-24-1565-2020, 24(3), 1565-1586.
+2. Huerta, A. (2020). Actual evapotranspiration at Peru scale (2003-2013) (Version 1). figshare. https://doi.org/10.6084/m9.figshare.13270391.v1 (http://repositorio.lamolina.edu.pe/handle/UNALM/4503)
